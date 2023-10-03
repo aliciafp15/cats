@@ -36,8 +36,19 @@
   <p>Me llamo Alicia Fernández Pushkina, UO275727 en la Universidad de Oviedo, y estoy cursando "Software y Estándares
     para la Web".</p>
 
-  <img src="multimedia/imagenes/foto_ali.jpeg" alt="foto_de_perfil">
+    <!--<img src="multimedia/imagenes/foto_ali_movil.jpeg" alt="foto_de_perfil">-->
 
+ 
+
+     <picture>
+      <source srcset="multimedia/imagenes/foto_ali_movil.jpeg" media="(max-width: 465px)">
+      <source srcset="multimedia/imagenes/foto_ali_tablet.jpeg" media="(max-width: 799px)">
+      <source srcset="multimedia/imagenes/foto_ali_ordenador.jpeg" media="(min-width: 800px)">
+      <img src="multimedia/imagenes/foto_ali_movil.jpeg" alt="Foto de perfil.">
+     </picture>
+  
+
+  <h3>Aficiones</h3>
   <p>Tengo muchos hobbies y me cuesta dedicarles un tiempo diariamente a todos. Algunos de ellos son estos:</p>
 
   <!--lista no ordenada-->
@@ -62,8 +73,9 @@
   </video>
 
 
+  <h3>Música</h3>
   <p>También escucho bastante música así que es difícil elegir, pero si tuviese que hacer una selección, este sería mi
-    top 5 de grupos/artistas con algunas mis canciones favoritas:</p>
+    top 5 de grupos/artistas con algunas de mis canciones favoritas:</p>
   <!--lista ordenada y anidada-->
   <ol>
     <li>Bring Me The Horizon.
@@ -111,6 +123,7 @@
 
 
 
+  <h3>Asignaturas</h3>
   <p>Aquí van 5 asignaturas que más me han gustado del grado por ahora:</p>
   <!--lista definición-->
   <dl>
@@ -135,6 +148,7 @@
   </dl>
 
 
+  <h3>Clima</h3>
   <p>Soy de Mieres pero me fue imposible encontrar datos climáticos anuales y más aún que fuesen de hace 10 años. Por lo
     que
     utilizaré las temperaturas medias anuales de Oviedo en los últimos 10 años:</p>
