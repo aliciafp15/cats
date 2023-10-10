@@ -9,193 +9,260 @@
   <meta name="author" content="Alicia Fernández Pushkina" />
   <meta name="description" content="Documento con la información personal" />
   <meta name="keywords"
-    content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+    content="datos personales,aficiones,musica,asignaturas,clima" />
   <!-- Definir la ventana gráfica -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-  <link href="multimedia/imagenes/favicon.ico" rel="icon"/>
+  <link href="multimedia/imagenes/favicon.ico" rel="icon" />
 </head>
 
 <body>
-  <!-- Datos con el contenidos que aparece en el navegador -->
-  <h1>Escritorio Virtual</h1>
+  <header>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <h1>Escritorio Virtual</h1>
 
+    <nav>
+      <a title="index" accesskey="I" href="index.html" tabindex="1">Index</a>
+      <a title="index" accesskey="S" href="sobremi.html" tabindex="2">Sobre mí</a>
+      <a title="index" accesskey="N" href="noticias.html" tabindex="3">Noticias</a>
+      <a title="index" accesskey="A" href="agenda.html" tabindex="4">Agenda</a>
+      <a title="index" accesskey="M" href="metereologia.html" tabindex="5">Metereología</a>
+      <a title="index" accesskey="V" href="viajes.html" tabindex="6">Viajes</a>
+      <a title="index" accesskey="J" href="juegos.html" tabindex="7">Juegos</a>
+    </nav>
+  </header>
 
-  <nav>
-
-    <a title="index" accesskey="I" href="index.html" tabindex=1>Index</a>
-    <a title="index" accesskey="S" href="sobremi.html" tabindex=2>Sobre mí</a>
-    <a title="index" accesskey="N" href="noticias.html" tabindex=3>Noticias</a>
-    <a title="index" accesskey="A" href="agenda.html" tabindex=4>Agenda</a>
-    <a title="index" accesskey="M" href="metereologia.html" tabindex=5>Metereología</a>
-    <a title="index" accesskey="V" href="viajes.html" tabindex=6>Viajes</a>
-    <a title="index" accesskey="J" href="juegos.html" tabindex=7>Juegos</a>
-
-  </nav>
-
+  <!--<main>-->
   <h2>Sobre mí</h2>
-  <p>Me llamo Alicia Fernández Pushkina, UO275727 en la Universidad de Oviedo, y estoy cursando "Software y Estándares
-    para la Web".</p>
+  <!--seccion porque no es autocontenido para aparecer como un Article-->
+  <section>
+    
+    <h3>¿Quién soy?</h3>
+    <p>
+      Me llamo Alicia Fernández Pushkina, UO275727 en la Universidad de
+      Oviedo, y estoy cursando "Software y Estándares para la Web".
+    </p>
 
     <!--<img src="multimedia/imagenes/foto_ali_movil.jpeg" alt="foto_de_perfil">-->
 
- 
+    <picture>
+      <source srcset="multimedia/imagenes/foto_ali_movil.jpeg" media="(max-width: 465px)" />
+      <source srcset="multimedia/imagenes/foto_ali_tablet.jpeg" media="(max-width: 799px)" />
+      <source srcset="multimedia/imagenes/foto_ali_ordenador.jpeg" media="(min-width: 800px)" />
+      <img src="multimedia/imagenes/foto_ali_ordenador.jpeg" alt="Foto de perfil." />
+    </picture>
+  </section>
 
-     <picture>
-      <source srcset="multimedia/imagenes/foto_ali_movil.jpeg" media="(max-width: 465px)">
-      <source srcset="multimedia/imagenes/foto_ali_tablet.jpeg" media="(max-width: 799px)">
-      <source srcset="multimedia/imagenes/foto_ali_ordenador.jpeg" media="(min-width: 800px)">
-      <img src="multimedia/imagenes/foto_ali_movil.jpeg" alt="Foto de perfil.">
-     </picture>
-  
+  <section>
+    <h3>Aficiones</h3>
+    <p>
+      Tengo muchos hobbies y me cuesta dedicarles un tiempo diariamente a
+      todos. Algunos de ellos son estos:
+    </p>
 
-  <h3>Aficiones</h3>
-  <p>Tengo muchos hobbies y me cuesta dedicarles un tiempo diariamente a todos. Algunos de ellos son estos:</p>
+    <!--lista no ordenada-->
+    <ul>
+      <li>Dibujar de vez en cuando, tanto digital como tradicional.</li>
+      <li>Leer mucho, sobretodo fantasía.</li>
+      <li>Jugar a videojuegos.</li>
+      <li>Diseñar mi Bullet Journal.</li>
+      <li>Practicar ruso, muy de vez en cuando.</li>
+    </ul>
 
-  <!--lista no ordenada-->
-  <ul>
-    <li>Dibujar de vez en cuando, tanto digital como tradicional.</li>
-    <li>Leer mucho, sobretodo fantasía.</li>
-    <li>Jugar a videojuegos.</li>
-    <li>Diseñar mi Bullet Journal.</li>
-    <li>Practicar ruso, muy de vez en cuando.</li>
-  </ul>
+    <p>
+      Una de las mejores maneras para practicar mi ruso es escuchando música
+      y viendo videos. Aquí debajo incluyo un video
+      sobre una manifestación importante que pasó en 2020 en Minsk, de donde
+      soy por parte materna. Decenas de miles de personas se manifestaron
+      para pedir la renuncia del presidente Alexandr Lukashenko, que lleva
+      siendo presidente desde 1994. También te dejo en
+      <a href="https://www.youtube.com/watch?v=aOnp0kfAr80" title="manifestacion  Minsk en ingles">
+        este</a>
+      enlace acceso al video oficial con subtítulos en inglés.
+    </p>
+    <video controls preload="auto">
+      <source src="multimedia/videos/minsk.mp4" type="video/mp4" />
+      <source src="multimedia/videos/minsk.webm" type="video/webm" />
+    </video>
+  </section>
 
-  <p>Una de las mejores maneras para practicar mi ruso es escuchando música y viendo videos. Aquí debajo incluyo un
-    <a href="https://www.youtube.com/watch?v=O0FvsQd3dEo" title="manifestacion  Minsk"> video</a> sobre una
-    manifestación importante que pasó en 2020 en Minsk, de donde soy por parte materna. Decenas de miles
-    de personas se manifestaron para pedir la
-    renuncia del presidente Alexandr Lukashenko, que lleva siendo presidente desde 1994. También te dejo en <a
-      href="https://www.youtube.com/watch?v=aOnp0kfAr80" title="manifestacion  Minsk en ingles"> este</a> enlace acceso
-    al videoclip oficial con subtítulos en inglés.
-  </p>
-  <video controls preload="auto">
-    <source src="multimedia/videos/minsk.mp4" type="video/mp4" />
-    <source src="multimedia/videos/minsk.webm" type="video/webm" />
-  </video>
+  <section>
+    <h3>Música</h3>
+    <p>
+      También escucho bastante música así que es difícil elegir, pero si
+      tuviese que hacer una selección, este sería mi top 5 de
+      grupos/artistas con algunas de mis canciones favoritas:
+    </p>
+    <!--lista ordenada y anidada-->
+    <ol>
+      <li>
+        Bring Me The Horizon.
+        <ul>
+          <li>
+            <a href="https://youtu.be/OGc9W-_C9u0?si=ppPoQSvtmyj4mosu" title="Doomed-BMTH">
+              "Doomed"</a>
+          </li>
+          <li>"Chelsea Smile".</li>
+          <li>"Teardrops".</li>
+        </ul>
+      </li>
 
+      <li>
+        MiyaGi.
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=4rmS97ebQaU" title="Самурай-MiyaGi">
+              Самурай"</a>
+          </li>
+          <li>"Silhouette".</li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=JvIoJY7n0DU" title="Саptain-MiyaGi">
+              Captain"</a>
+          </li>
+        </ul>
+      </li>
 
-  <h3>Música</h3>
-  <p>También escucho bastante música así que es difícil elegir, pero si tuviese que hacer una selección, este sería mi
-    top 5 de grupos/artistas con algunas de mis canciones favoritas:</p>
-  <!--lista ordenada y anidada-->
-  <ol>
-    <li>Bring Me The Horizon.
-      <ul>
-        <li> <a href="https://youtu.be/OGc9W-_C9u0?si=ppPoQSvtmyj4mosu" title="Doomed-BMTH"> "Doomed"</a></li>
-        <li>"Chelsea Smile".</li>
-        <li>"Teardrops".</li>
-      </ul>
-    </li>
+      <li>
+        Architects.
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=WqRYBWyvbRo" title="Hereafter-Architects">
+              "Hereafter"</a>
+          </li>
+          <li>"C.A.N.C.E.R".</li>
+          <li>"Gone with the wind".</li>
+        </ul>
+      </li>
+      <li>
+        Twenty One Pilots.
+        <ul>
+          <li>"Chlorine".</li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=92XVwY54h5k" title="Car Radio-TOP">
+              "Car Radio"</a>
+          </li>
+          <li>"No chances".</li>
+        </ul>
+      </li>
+      <li>
+        David Guetta.
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=JRfuAukYTKg" title="Titanium-David Guetta">
+              "Titanium"</a>
+          </li>
+          <li>"Memories".</li>
+          <li>"She Wolf(Falling to Pieces)".</li>
+        </ul>
+      </li>
+    </ol>
 
-    <li>MiyaGi.
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=4rmS97ebQaU" title="Самурай-MiyaGi"> Самурай"</a></li>
-        <li>"Silhouette".</li>
-        <li><a href="https://www.youtube.com/watch?v=JvIoJY7n0DU" title="Саptain-MiyaGi"> Captain"</a></li>
-      </ul>
-    </li>
+    <audio controls>
+      <source src="multimedia/audios/MiyaGi-Captain.mp3" type="audio/mp3" />
+      <source src="multimedia/audios/MiyaGi-Captain.wav" type="audio/wav" />
+    </audio>
+  </section>
 
-    <li>Architects.
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=WqRYBWyvbRo" title="Hereafter-Architects"> "Hereafter"</a></li>
-        <li>"C.A.N.C.E.R".</li>
-        <li>"Gone with the wind".</li>
-      </ul>
-    </li>
-    <li>Twenty One Pilots.
-      <ul>
-        <li>"Chlorine".</li>
-        <li><a href="https://www.youtube.com/watch?v=92XVwY54h5k" title="Car Radio-TOP"> "Car Radio"</a></li>
-        <li>"No chances".</li>
-      </ul>
-    </li>
-    <li>David Guetta.
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=JRfuAukYTKg" title="Titanium-David Guetta"> "Titanium"</a></li>
-        <li>"Memories".</li>
-        <li>"She Wolf(Falling to Pieces)".</li>
-      </ul>
-    </li>
-  </ol>
+  <section>
+    <h3>Asignaturas</h3>
+    <p>
+      Aquí van 5 asignaturas que más me han gustado del grado por ahora:
+    </p>
+    <!--lista definición-->
+    <dl>
+      <dt>Realidad y Accesibilidad Aumentadas.</dt>
+      <dd>
+        Es muy creativa y toca distintos temas interesantes como el modelado
+        3D o programar para las gafas de realidad virtual.
+      </dd>
 
-  <audio controls>
-    <source src="multimedia/audios/MiyaGi-Captain.mp3" type="audio/mp3">
-    <source src="multimedia/audios/MiyaGi-Captain.wav" type="audio/wav">
-  </audio>
+      <dt>Diseño del Software.</dt>
+      <dd>
+        Un poco complicada al principio pero tras estudiarla considero que
+        es fundamental.
+      </dd>
 
+      <dt>Repositorios de Información.</dt>
+      <dd>
+        Mucha carga de trabajo pero se me hizo entretenida. Recuerdo muchas
+        tardes y noches de programar con música.
+      </dd>
 
+      <dt>Arquitectura del Software.</dt>
+      <dd>
+        Quizás una de las asignaturas que más simulan el trabajo real.
+        Difícil de arrancar y organizarte con tus compañeros al inicio, pero
+        el resultado final es muy satisfactorio.
+      </dd>
 
-  <h3>Asignaturas</h3>
-  <p>Aquí van 5 asignaturas que más me han gustado del grado por ahora:</p>
-  <!--lista definición-->
-  <dl>
-    <dt> Realidad y Accesibilidad Aumentadas.</dt>
-    <dd> Es muy creativa y toca distintos temas interesantes como el modelado 3D o programar para las gafas de realidad
-      virtual.</dd>
+      <dt>Algoritmia.</dt>
+      <dd>
+        Aunque siempre me cuesta un poco entender este tipo de asignaturas,
+        luego termino pillándole el gusto. Me parece interesante el tema.
+      </dd>
+    </dl>
+  </section>
+  <!--</main>-->
 
-    <dt> Diseño del Software.</dt>
-    <dd> Un poco complicada al principio pero tras estudiarla considero que es fundamental.</dd>
+  <aside>
+    <h3>Clima</h3>
+    <p>
+      Soy de Mieres pero me fue imposible encontrar datos climáticos anuales y
+      más aún que fuesen de hace 10 años. Por lo que utilizaré las
+      temperaturas medias anuales de Oviedo en los últimos 10 años:
+    </p>
+    <!--tabla tiene que ser accesible-->
+    <table>
+      <caption>
+        Temperaturas medias anuales de Oviedo en los últimos 10 años
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" id="año">Año</th>
+          <th scope="col" id="año-2022">2022</th>
+          <th scope="col" id="año-2021">2021</th>
+          <th scope="col" id="año-2020">2020</th>
+          <th scope="col" id="año-2019">2019</th>
+          <th scope="col" id="año-2018">2018</th>
+          <th scope="col" id="año-2017">2017</th>
+          <th scope="col" id="año-2016">2016</th>
+          <th scope="col" id="año-2015">2015</th>
+          <th scope="col" id="año-2014">2014</th>
+          <th scope="col" id="año-2013">2013</th>
+          <th scope="col" id="año-2012">2012</th>
+        </tr>
+      </thead>
 
-    <dt> Repositorios de Información.</dt>
-    <dd> Mucha carga de trabajo pero se me hizo entretenida. Recuerdo muchas tardes y noches de programar con música.
-    </dd>
+      <tbody>
+        <tr>
+          <th scope="row" id="temp" headers="temp">Temp.</th>
+          <td headers="temp año-2022">14.0</td>
+          <td headers="temp año-2021">13.0</td>
+          <td headers="temp año-2020">13.8</td>
+          <td headers="temp año-2019">13.2</td>
+          <td headers="temp año-2018">13.1</td>
+          <td headers="temp año-2017">13.3</td>
+          <td headers="temp año-2016">13.2</td>
+          <td headers="temp año-2015">13.4</td>
+          <td headers="temp año-2014">13.5</td>
+          <td headers="temp año-2013">12.3</td>
+          <td headers="temp año-2012">12.7</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <dt> Arquitectura del Software.</dt>
-    <dd> Quizás una de las asignaturas que más simulan el trabajo real.
-      Difícil de arrancar y organizarte con tus compañeros al inicio, pero el resultado final es muy satisfactorio.</dd>
-
-    <dt> Algoritmia.</dt>
-    <dd> Aunque siempre me cuesta un poco entender este tipo de asignaturas, luego termino pillándole el gusto. Me
-      parece interesante el tema.</dd>
-  </dl>
-
-
-  <h3>Clima</h3>
-  <p>Soy de Mieres pero me fue imposible encontrar datos climáticos anuales y más aún que fuesen de hace 10 años. Por lo
-    que
-    utilizaré las temperaturas medias anuales de Oviedo en los últimos 10 años:</p>
-  <table>
-    <thead>
-      <tr>
-        <th>2022</th>
-        <th>2021</th>
-        <th>2020</th>
-        <th>2019</th>
-        <th>2018</th>
-        <th>2017</th>
-        <th>2016</th>
-        <th>2015</th>
-        <th>2014</th>
-        <th>2013</th>
-        <th>2012</th>
-
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>14.0</td>
-        <td>13.0</td>
-        <td>13.8</td>
-        <td>13.2</td>
-        <td>13.1</td>
-        <td>13.3</td>
-        <td>13.2</td>
-        <td>13.4</td>
-        <td>13.5</td>
-        <td>12.3</td>
-        <td>12.7</td>
-      </tr>
-    </tbody>
-
-  </table>
-  <p>Los datos climáticos han sido sacados de <a href="https://www.tutiempo.net/clima/ws-80150.html"
-      title="Histórico clima Oviedo"> aquí.</a> </p>
-
-  <p>Si me necesitas, puedes ponerte en contacto conmigo en este correo "uo275727@uniovi.es".</p>
-
-
+    <p>
+      Los datos climáticos han sido sacados de
+      <a href="https://www.tutiempo.net/clima/ws-80150.html" title="Histórico clima Oviedo">
+        aquí.</a>
+    </p>
+  </aside>
+  <!-- mejor evitarlo para evitar problemas en la generaion de codigo
+  <footer>
+    <p> Página creada por Alicia Fernández Pushkina, uo275727@uniovi.es, para Software y Estándares para la Web, en
+      2023. </p>
+  </footer>
+  -->
 </body>
 
 </html>
