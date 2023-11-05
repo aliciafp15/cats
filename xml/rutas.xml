@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rutas SYSTEM "rutas.dtd"> 
+<rutas>
+    <ruta nombreRuta="Chipangali Wildlife, Hillside Dams y Matobo National Park ">
+        <datos>
+            <tipoRuta>"Turismo"</tipoRuta>
+            <transporte>"Coche"</transporte>
+            <duracion>"3 horas"</duracion>
+            <agencia>"Sin agencia"</agencia>
+            <descripcion>"Conoce el refugio Chipangali. Después visita Bulawayo, la segunda ciudad más importante de Zimbabue. 
+            Y termina en el Parque Nacional de Matobo y su naturaleza."</descripcion>
+            <publico>"Todos"</publico>
+            <lugarInicio>"Restaurante Jade Garden"</lugarInicio>
+            <direccionInicio>"2212 Esigodini Rd, Bulawayo, Zimbabue"</direccionInicio>
+            <coordenadas> 
+                <latitud> -20.20740354218954</latitud>
+                <longitud>28.671954545002098</longitud>
+                <altitud>1300  </altitud>
+            </coordenadas>
+            <referencias>"https://www.facebook.com/Chipangali/",
+                "https://en.wikipedia.org/wiki/Hillside_Dams",
+                "https://www.tripadvisor.es/Attraction_Review-g298091-d1574682-Reviews-Matobo_National_Park-Bulawayo_Bulawayo_Province.html"</referencias>
+            <recomendacion>8</recomendacion>
+
+        </datos>
+
+        <hitos>
+            <hito nombreHito="Chipangali Wildlife Orphanage">
+				<descripcionHito>"Un refugio para animales que han sido abandonados o heridos llevado por una familia de voluntarios "</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-20.25149898009459</latitud>
+					<longitud>28.781237590791076</longitud>
+                    <altitud>1400</altitud>
+				</coordenadasHito>
+                <distancia>"14 km"</distancia>
+                <fotografias>
+                    "Chipangali1.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+            <hito nombreHito="Hillside Dams">
+				<descripcionHito>"Monumento nacional de Zimbabue ubicado en la ciudad de Bulawayo"</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-20.195553875216692</latitud>
+					<longitud> 28.6134686957795</longitud>
+                    <altitud>1400</altitud>
+				</coordenadasHito>
+                <distancia>"23.8 km"</distancia>
+                <fotografias>
+                    "Matobo.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+            <hito nombreHito="Matobo National Park">
+				<descripcionHito>"Parque nacional con jirafas, felinos, rinocerontes, formaciones rocosas, pinturas rupestres y alojamiento"</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-20.55855547881508</latitud>
+					<longitud>28.51148059535059</longitud>
+                    <altitud>1500</altitud>
+				</coordenadasHito>
+                <distancia>"33.4 km"</distancia>
+                <fotografias>
+                    "HillSide.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+
+        </hitos>
+    </ruta>
+
+
+
+
+
+
+    <ruta nombreRuta="Ruta de cascadas">
+        <datos>
+            <tipoRuta>"Senderismo"</tipoRuta>
+            <transporte>"Coche y pie"</transporte>
+            <duracion>"3 horas"</duracion>
+            <agencia>"Sin agencia"</agencia>
+            <descripcion>"Conoce las famosas Cataratas Victoria, su parque natural y despídete con la Catarata del Diablo."</descripcion>
+            <publico>"Todos"</publico>
+            <lugarInicio>"The Lookout Cafe"</lugarInicio>
+            <direccionInicio>"Batoka Gorge, Victoria Falls, Zimbabue"</direccionInicio>
+            <coordenadas> 
+                <latitud>-17.929120489894753</latitud>
+                <longitud>25.84660288375006</longitud>
+                <altitud>900</altitud>
+            </coordenadas>
+            <referencias>"https://www.siyabona.com/explore-victoria-falls-devils-cataract.html",
+            "https://cronicoviajero.com/visita-cataratas-victoria/",
+            "https://viajes.nationalgeographic.com.es/a/video-curiosidades-sobre-cataratas-victoria_16563"
+            </referencias>
+            <recomendacion>8</recomendacion>
+
+        </datos>
+
+        <hitos>
+            <hito nombreHito="Cataratas Victoria">
+				<descripcionHito>"Cascada conocida por su gran tamaño, con una piscina natural en la que pueden bañarse los visitantes. "</descripcionHito>
+				<coordenadasHito> 
+                    <latitud>-17.92542007643</latitud>
+					<longitud>25.858683385977617</longitud>
+                    <altitud>800</altitud>
+				</coordenadasHito>
+                <distancia>"500m"</distancia>
+                <fotografias>
+                    "CataratasVictoria.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+            <hito nombreHito="Parque Nacional de las Cataratas Victoria">
+				<descripcionHito>"El Parque Nacional de las Cataratas Victoria en el noroeste de Zimbabue protege las orillas sur y este del río Zambeze en el área de las famosas Cataratas Victoria. "</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-17.924863152282438</latitud>
+					<longitud>25.84824458355874</longitud>
+                    <altitud>900</altitud>
+				</coordenadasHito>
+                <distancia>"500m"</distancia>
+                <fotografias>
+                    "ParqueVictoria.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+            <hito nombreHito="Catarata del Demonio">
+				<descripcionHito>"La más pequeña de  las cinco cataratas con una caida de 60 metros. "</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-17.92281514284505</latitud>
+					<longitud>25.847512970409987</longitud>
+                    <altitud>700</altitud>
+				</coordenadasHito>
+                <distancia>"900m"</distancia>
+                <fotografias>
+                    "DevilsCatarat.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+
+        </hitos>
+    </ruta>
+
+
+
+
+
+     <ruta nombreRuta="Conoce Harare">
+        <datos>
+            <tipoRuta>"Comercial"</tipoRuta>
+            <transporte>"Coche y pie"</transporte>
+            <duracion>"2h"</duracion>
+            <agencia>"Sin agencia"</agencia>
+            <descripcion>"Conoce la capital de Zimbabue."</descripcion>
+            <publico>"Todos"</publico>
+            <lugarInicio>"The Vanilla Moon"</lugarInicio>
+            <direccionInicio>"8 Seagrave Rd, Harare, Zimbabue"</direccionInicio>
+            <coordenadas> 
+                <latitud>-17.787595808538036</latitud>
+                <longitud>31.04155333122524</longitud>
+                <altitud>800</altitud>
+            </coordenadas>
+            <referencias>"http://mbizi.co.zw",
+            "https://www.shonasculpture.gallery",
+            "https://en.wikipedia.org/wiki/Harare"
+            </referencias>
+            <recomendacion>8</recomendacion>
+
+        </datos>
+
+        <hitos>
+            <hito nombreHito="Jardín Botánico Nacional de Zimbabue">
+				<descripcionHito>"Jardín botánico de unos 7 km² de extensión en Harare, Zimbabue. Su código de reconocimiento internacional como institución botánica, así como las siglas de su herbario es SRGH."</descripcionHito>
+				<coordenadasHito> 
+                    <latitud>-17.798667421308366</latitud>
+					<longitud>31.051667119329743</longitud>
+                    <altitud>800</altitud>
+				</coordenadasHito>
+                <distancia>"2km"</distancia>
+                <fotografias>
+                    "JardinBotanico.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+            <hito nombreHito="Shona Sculpture Gallery">
+				<descripcionHito>"Galeria de arte de Harare. "</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-17.874439273641542</latitud>
+					<longitud>31.07543637998989</longitud>
+                    <altitud>800</altitud>
+				</coordenadasHito>
+                <distancia>"11km"</distancia>
+                <fotografias>
+                    "shona.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+            <hito nombreHito="Mbizi Game Park">
+				<descripcionHito>"Parque de animales salvajes y safari. "</descripcionHito>
+				<coordenadasHito>
+                    <latitud>-17.957692994304914</latitud>
+					<longitud>31.142792167406544</longitud>
+                    <altitud>800</altitud>
+				</coordenadasHito>
+                <distancia>"15km"</distancia>
+                <fotografias>
+                    "mbizi.jpg"
+                </fotografias>
+                <videos>
+                </videos>
+			</hito>
+
+
+        </hitos>
+    </ruta>
+
+</rutas>
