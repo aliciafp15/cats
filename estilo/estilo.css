@@ -1,4 +1,108 @@
 /*datos personales Alicia Fernández Pushkina y UO275727*/
 
-  
+/*
+Cupcake Delight
+
+
+    Purple
+    #8741E1
+    Aqua
+    #B4FEE7
+    
+    Violeta o cuaqlueir otro que necesite
+    #E8DBF9
+    ROSITA CLARO PARA PONER FONDOS SUTILES
+    #FDC9E1
+
+    Fuchsia
+    #DE026D
+*/
+
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    color: black;
+
+}
+
+header {
+    background-color: #8741E1;
+    color: #B4FEE7;
+}
+
+header>nav a {
+    /* background-color heredado de header????????????????? */
+    color: #B4FEE7;
+}
+
+h2 {
+    /*centra el título*/
+    text-align: center;
+}
+
+h2,
+h3 {
+    /* background-color heredado de body????????????????? */
+    color: #DE026D;
+}
+table {
+    /*borde a la tabla*/
+    border-collapse: collapse;
+    border-color: #8741E1; 
+
+    /* color heredado de body */  
+    background-color: #FDC9E1;
+    /*redondea el borde*/
+    border-radius: 1em;
+
+     /* Ponemos la tabla a un 15% de la pantalla */
+     max-width: 15%;
+     width: 100%;
+  }
+
+
+table>thead {
+    font-size: large;
+}
+
+table>caption {
+    font-size: small;
+    font-style: italic;
+
+}
+
+/*hiper vínculos*/
+body a {
+    color: #DE026D;
+}
+
+
+ul {
+    /*cambia la viñeta de las listas no ordenadas*/
+    list-style-type: square;
+}
+
+/*tercer elemento de la lista no ordenada*/
+ul li:nth-child(3) {
+    color: #DE026D;
+}
+
+
+ol {
+    /*cambia la viñeta de la lista ordenada*/
+    list-style: upper-roman;
+}
+
+dt {
+    /* background-color heredado de body????????????????? */
+    color: #8741E1; 
+    font-weight: bold; 
+  }
+
+/*PREGUNTAR POR LA ADAPTABILIDAD DE LOS MULTIMEDIA*/
+video {
+    /*el video responderá y se escalará automaticamente*/
+    max-width: 80%;
+}
+
   
