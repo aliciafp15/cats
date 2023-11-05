@@ -8,11 +8,11 @@
   <title>Escritorio Virtual - Sobre mí</title>
   <meta name="author" content="Alicia Fernández Pushkina" />
   <meta name="description" content="Documento con la información personal" />
-  <meta name="keywords"
-    content="datos personales,aficiones,musica,asignaturas,clima" />
+  <meta name="keywords" content="datos personales,aficiones,musica,asignaturas,clima" />
   <!-- Definir la ventana gráfica -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
   <link href="multimedia/imagenes/favicon.ico" rel="icon" />
 </head>
 
@@ -36,7 +36,7 @@
   <h2>Sobre mí</h2>
   <!--seccion porque no es autocontenido para aparecer como un Article-->
   <section>
-    
+
     <h3>¿Quién soy?</h3>
     <p>
       Me llamo Alicia Fernández Pushkina, UO275727 en la Universidad de
@@ -64,9 +64,9 @@
     <ul>
       <li>Dibujar de vez en cuando, tanto digital como tradicional.</li>
       <li>Leer mucho, sobretodo fantasía.</li>
+      <li>Practicar ruso, muy de vez en cuando.</li>
       <li>Jugar a videojuegos.</li>
       <li>Diseñar mi Bullet Journal.</li>
-      <li>Practicar ruso, muy de vez en cuando.</li>
     </ul>
 
     <p>
@@ -212,44 +212,63 @@
       temperaturas medias anuales de Oviedo en los últimos 10 años:
     </p>
     <!--tabla tiene que ser accesible-->
+
     <table>
-      <caption>
-        Temperaturas medias anuales de Oviedo en los últimos 10 años
-      </caption>
+      <caption>Temperaturas medias anuales de Oviedo en los últimos 10 años</caption>
       <thead>
         <tr>
           <th scope="col" id="año">Año</th>
-          <th scope="col" id="año-2022">2022</th>
-          <th scope="col" id="año-2021">2021</th>
-          <th scope="col" id="año-2020">2020</th>
-          <th scope="col" id="año-2019">2019</th>
-          <th scope="col" id="año-2018">2018</th>
-          <th scope="col" id="año-2017">2017</th>
-          <th scope="col" id="año-2016">2016</th>
-          <th scope="col" id="año-2015">2015</th>
-          <th scope="col" id="año-2014">2014</th>
-          <th scope="col" id="año-2013">2013</th>
-          <th scope="col" id="año-2012">2012</th>
+          <th scope="col" id="temperatura"> °C</th>
         </tr>
       </thead>
-
       <tbody>
         <tr>
-          <th scope="row" id="temp" headers="temp">Temp.</th>
-          <td headers="temp año-2022">14.0</td>
-          <td headers="temp año-2021">13.0</td>
-          <td headers="temp año-2020">13.8</td>
-          <td headers="temp año-2019">13.2</td>
-          <td headers="temp año-2018">13.1</td>
-          <td headers="temp año-2017">13.3</td>
-          <td headers="temp año-2016">13.2</td>
-          <td headers="temp año-2015">13.4</td>
-          <td headers="temp año-2014">13.5</td>
-          <td headers="temp año-2013">12.3</td>
-          <td headers="temp año-2012">12.7</td>
+          <th scope="row" id="año-2022">2022</th>
+          <td headers="año-2022 temperatura">14.0</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2021">2021</th>
+          <td headers="año-2021 temperatura">13.0</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2020">2020</th>
+          <td headers="año-2020 temperatura">13.8</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2019">2019</th>
+          <td headers="año-2019 temperatura">13.2</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2018">2018</th>
+          <td headers="año-2018 temperatura">13.1</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2017">2017</th>
+          <td headers="año-2017 temperatura">13.3</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2016">2016</th>
+          <td headers="año-2016 temperatura">13.2</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2015">2015</th>
+          <td headers="año-2015 temperatura">13.4</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2014">2014</th>
+          <td headers="año-2014 temperatura">13.5</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2013">2013</th>
+          <td headers="año-2013 temperatura">12.3</td>
+        </tr>
+        <tr>
+          <th scope="row" id="año-2012">2012</th>
+          <td headers="año-2012 temperatura">12.7</td>
         </tr>
       </tbody>
     </table>
+
 
     <p>
       Los datos climáticos han sido sacados de
@@ -257,6 +276,8 @@
         aquí.</a>
     </p>
   </aside>
+
+
   <!-- mejor evitarlo para evitar problemas en la generaion de codigo
   <footer>
     <p> Página creada por Alicia Fernández Pushkina, uo275727@uniovi.es, para Software y Estándares para la Web, en
