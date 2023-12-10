@@ -46,7 +46,10 @@ article[data-state="flip"] img {
       height: 100%;
       position: absolute;
       border-radius: 0.3125em;
-      background: #1C7CCC;
+      /* color heredado de h3 en estilo.css*/
+      color: #E8DBF9;
+      background: #53199F;      
+
       backface-visibility: hidden;
   }
   
