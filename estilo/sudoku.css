@@ -1,0 +1,22 @@
+/*datos personales Alicia Fernández Pushkina y UO275727*/
+
+/*especificidad (0,0,1) */
+main {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0;
+  border-width: 0.15em;
+  border-style: solid;
+  border-color: black;
+  /*tamaño fijo para mantener la proporcion 1:1*/
+  width: 31.25em;
+  height: 31.25em;
+  margin-left: 15em;
+}
+  /*especificidad (0,0,1) */
+  p {
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+    border: 0.063em solid rgb(152, 130, 177);
+  }

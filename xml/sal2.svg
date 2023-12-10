@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg viewBox="0 -200 300 200" xmlns="http://www.w3.org/2000/svg" version="2.0">
+  <polyline points=
+  "0,-130 14,-145 37,-140 71,-160 142,-130 0,-130"
+  style="fill:peru;stroke:red;stroke-width:4" />
+  
+  </svg>

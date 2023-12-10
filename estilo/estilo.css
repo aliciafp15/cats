@@ -1,50 +1,49 @@
-/*datos personales Alicia Fernández Pushkina y UO275727*/
+/*++++++++++++++++++++++++++++++++++
+Alicia Fernández Pushkina - UO275727
+Descripcion de los estilos
+ +++++++++++++++++++++++++++++++++++*/
 
 /*
-Cupcake Delight
-
-
     Purple
     #8741E1
     Aqua
     #B4FEE7
-    
-    Violeta o cuaqlueir otro que necesite
+    Violeta o cuaqlueir otro que necesite(todavia no usado)
     #E8DBF9
     ROSITA CLARO PARA PONER FONDOS SUTILES
     #FDC9E1
-
     Fuchsia
     #DE026D
 */
 
-
+/*especificidad (0,0,1) */
 body {
     font-family: Verdana, Geneva, sans-serif;
     color: black;
+    background-color: white;
 
 }
 
+/*especificidad (0,0,1) */
 header {
     background-color: #8741E1;
     color: #B4FEE7;
 }
 
-header>nav a {
-    /* background-color heredado de header????????????????? */
-    color: #B4FEE7;
-}
 
+/*especificidad (0,0,1) */
 h2 {
     /*centra el título*/
     text-align: center;
 }
 
-h2,
-h3 {
-    /* background-color heredado de body????????????????? */
+/*especificidad (0,0,1) */
+h2, h3{
+    /* background-color heredado de body*/
     color: #DE026D;
 }
+
+/*especificidad (0,0,1) */
 table {
     /*borde a la tabla*/
     border-collapse: collapse;
@@ -61,48 +60,70 @@ table {
   }
 
 
+/*especificidad (0,0,1) */
+ul {
+    /*cambia la viñeta de las listas no ordenadas*/
+    list-style-type: square;
+}
+
+
+/*especificidad (0,0,1) */
+ol {
+    /*cambia la viñeta de la lista ordenada*/
+    list-style: upper-roman;
+}
+
+/*especificidad (0,0,1) */
+dt {
+    /* background-color heredado de body*/
+    color: #8741E1; 
+    font-weight: bold; 
+  }
+
+/*especificidad (0,0,1) */
+video {
+    /*el video responderá y se escalará automaticamente*/
+    max-width: 80%;
+}
+
+/*especificidad (0,0,1) */
+a {
+     /* background-color heredado de body*/
+    color: #DE026D;
+}
+
+/*especificidad (0,0,2) */
 table>thead {
     font-size: large;
 }
 
+/*especificidad (0,0,2) */
 table>caption {
     font-size: small;
     font-style: italic;
 
 }
 
-/*hiper vínculos*/
-body a {
-    color: #DE026D;
+
+
+/*especificidad (0,0,3) */
+header>nav a {
+    /* background-color heredado de header*/
+    color: #B4FEE7;
 }
 
-
-ul {
-    /*cambia la viñeta de las listas no ordenadas*/
-    list-style-type: square;
+/*enlace al pasar el ratón por encima*/
+/*especificidad (0,1,1)*/
+a:hover {
+    /*background heredado de body*/
+    color: #8741E1;
 }
 
 /*tercer elemento de la lista no ordenada*/
-ul li:nth-child(3) {
+/*especificidad (0,1,2) */
+ul li:nth-child(3)  {
+    /*background heredado de body*/
     color: #DE026D;
-}
-
-
-ol {
-    /*cambia la viñeta de la lista ordenada*/
-    list-style: upper-roman;
-}
-
-dt {
-    /* background-color heredado de body????????????????? */
-    color: #8741E1; 
-    font-weight: bold; 
-  }
-
-/*PREGUNTAR POR LA ADAPTABILIDAD DE LOS MULTIMEDIA*/
-video {
-    /*el video responderá y se escalará automaticamente*/
-    max-width: 80%;
 }
 
   
