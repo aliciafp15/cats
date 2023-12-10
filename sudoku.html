@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <!-- Datos que describen el documento -->
+  <meta charset="UTF-8" />
+  <title>Escritorio Virtual - Memoria</title>
+  <meta name="author" content="Alicia Fernández Pushkina" />
+  <meta name="description" content="Juego de un Sudoku para la práctica de javascript" />
+  <meta name="keywords" content="javascript, sudoku, juego, html, css" <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+<link rel="stylesheet" type="text/css" href="estilo/sudoku.css" />
+  <link href="multimedia/imagenes/favicon.ico" rel="icon" />
+  <script src="js/sudoku.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <h1>Escritorio Virtual</h1>
+
+    <nav>
+      <a title="index" accesskey="I" href="index.html" tabindex="1">Index</a>
+      <a title="index" accesskey="S" href="sobremi.html" tabindex="2">Sobre mí</a>
+      <a title="index" accesskey="N" href="noticias.html" tabindex="3">Noticias</a>
+      <a title="index" accesskey="A" href="agenda.html" tabindex="4">Agenda</a>
+      <a title="index" accesskey="M" href="metereologia.html" tabindex="5">Metereología</a>
+      <a title="index" accesskey="V" href="viajes.html" tabindex="6">Viajes</a>
+      <a title="index" accesskey="J" href="juegos.html" tabindex="7">Juegos</a>
+    </nav>
+  </header>
+  <nav>
+    <a href="memoria.html">Memoria</a>
+    <a href="sudoku.html">Sudoku</a>
+    <a href="crucigrama.html">Crucigrama</a>
+  </nav>
+    <h2>Sudoku</h2>
+   
+    <main>
+      <!--se rellenan los párrafos del sudoku con js-->
+    </main>
+    
+  
+
+</body>
+
+<script>
+  var juego = new Sudoku();
+  juego.paintSudoku();
+
+  document.addEventListener("keydown", (event) => {
+     const keyValue = parseInt(event.key);
+      if (!isNaN(keyValue) && keyValue >= 1 && keyValue <= 9) {
+        //debe estar seleccionada antes una tecla como receptora
+        const selectedCell = document.querySelector('p[data-state="clicked"]');
+        // Comprobar si hay una celda seleccionada
+        if (selectedCell) {
+          juego.introduceNumber(keyValue);
+        } else {
+          // Informar al usuario que debe seleccionar una celda antes de pulsar un número
+          alert('Selecciona una celda antes de introducir un número.');
+        }
+      }
+
+    
+});
+</script>
+
+</html>

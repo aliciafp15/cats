@@ -12,7 +12,11 @@
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/metereologia.css" />
     <link href="multimedia/imagenes/favicon.ico" rel="icon"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+    <script src="js/pais.js"></script>
   </head>
 
   <body>
@@ -32,6 +36,18 @@
     </header>
     <!--<main>-->
     <h2>Metereología</h2>
-    <p>En desarrollo.</p>
+    <script>
+      var pais = new Pais("Zimbabue", "Harare", 14438802);
+      //pais.rellenarAtributos("República presidencialista", "31.0533700,-17.8277200","sincretista");
+      pais.rellenarAtributos("República presidencialista", "-17.8277200",  "31.0533700","sincretista");
+      document.write("País: " + pais.getNombre() + "<br>");
+      document.write("Capital: " + pais.getCapital());
+      pais.escribeCoordenadas();
+      document.write("Más datos:<br>");
+      document.write(pais.getInfoSecundaria() + "<br>");
+
+      pais.mirarTiempo();
+    </script>
+      
   </body>
 </html>

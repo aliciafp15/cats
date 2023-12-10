@@ -5,20 +5,17 @@
 <head>
   <!-- Datos que describen el documento -->
   <meta charset="UTF-8" />
-  <title>Escritorio Virtual - Index</title>
+  <title>Escritorio Virtual - Memoria</title>
   <meta name="author" content="Alicia Fernández Pushkina" />
-  <meta name="description" content="documento inicial del Escritorio Virtua" />
-  <meta name="keywords"
-    content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+  <meta name="description" content="Juego de memoria con cartas para la práctica de javascript" />
+  <meta name="keywords" content="javascript, memoria, cartas, juego, html, css" />
   <!-- Definir la ventana gráfica -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
   <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+  <link rel="stylesheet" type="text/css" href="estilo/memoria.css" />
   <link href="multimedia/imagenes/favicon.ico" rel="icon" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
-  <script src="js/fondo.js"></script>
-  <script src="js/pais.js"></script>
+  <script src="js/memoria.js"></script>
 </head>
 
 <body>
@@ -36,18 +33,25 @@
       <a title="index" accesskey="J" href="juegos.html" tabindex="7">Juegos</a>
     </nav>
   </header>
-  <!--<main>-->
-  <h2>Index</h2>
-  <p>En desarrollo.</p>
 
+  <nav>
+    <a href="memoria.html">Memoria</a>
+    <a href="sudoku.html">Sudoku</a>
+    <a href="crucigrama.html">Crucigrama</a>
+  </nav>
+
+  <main>
+
+    <section>
+      <h2>Juego De Memoria</h2>
+
+    </section>
+  </main>
 </body>
-<script>
-  var pais = new Pais("Zimbabue", "Harare", 14438802); 
-  pais.rellenarAtributos("República presidencialista","-17.8277200",  "31.0533700", "sincretista");
-  var fondo = new Fondo(pais.nombre, pais.capital, pais.coordenadasCapital)
-  fondo.buscaFoto()
-  //fondo.ponFondo() //api publica
 
+
+<script>
+  var juego = new Memoria();
 </script>
 
 </html>
