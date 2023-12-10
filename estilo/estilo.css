@@ -26,8 +26,8 @@ body {
 
 /*especificidad (0,0,1) */
 header {
-    background-color: #53199F;
-    color:  #B4FEE7;
+    background-color: #330F61;
+    color:  #E8DBF9;
 }
 
 
@@ -47,7 +47,7 @@ h2, h3{
 table {
     /*borde a la tabla*/
     border-collapse: collapse;
-    border-color:  #330F61; /*#53199F;*/
+    border-color: #53199F; 
 
     /* color heredado de body */  
     background-color: #FDC9E1;
