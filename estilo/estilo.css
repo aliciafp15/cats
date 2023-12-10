@@ -27,7 +27,7 @@ body {
 /*especificidad (0,0,1) */
 header {
     background-color: #53199F;
-    color: #B4FEE7;
+    color:  #B4FEE7;
 }
 
 
@@ -109,7 +109,7 @@ table>caption {
 /*especificidad (0,0,3) */
 header>nav a {
     /* background-color heredado de header*/
-    color: #B4FEE7;
+    color: #FFFF;/* #B4FEE7;*/
 }
 
 /*enlace al pasar el ratón por encima*/
