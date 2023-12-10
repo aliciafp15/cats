@@ -47,7 +47,7 @@ h2, h3{
 table {
     /*borde a la tabla*/
     border-collapse: collapse;
-    border-color: #53199F; 
+    border-color:  #330F61; /*#53199F;*/
 
     /* color heredado de body */  
     background-color: #FDC9E1;
@@ -113,11 +113,12 @@ header>nav a {
 }
 
 /*enlace al pasar el ratón por encima*/
-/*especificidad (0,1,1)*/
+/*especificidad (0,1,1)
 a:hover {
     /*background heredado de body*/
-    color: #53199F;
+    /*color: #53199F;
 }
+*/
 
 /*tercer elemento de la lista no ordenada*/
 /*especificidad (0,1,2) */
