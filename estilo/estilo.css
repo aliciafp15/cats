@@ -5,7 +5,7 @@ Descripcion de los estilos
 
 /*
     Purple
-    #8741E1
+    #53199F
     Aqua
     #B4FEE7
     Violeta o cuaqlueir otro que necesite(todavia no usado)
@@ -26,7 +26,7 @@ body {
 
 /*especificidad (0,0,1) */
 header {
-    background-color: #8741E1;
+    background-color: #53199F;
     color: #B4FEE7;
 }
 
@@ -47,7 +47,7 @@ h2, h3{
 table {
     /*borde a la tabla*/
     border-collapse: collapse;
-    border-color: #8741E1; 
+    border-color: #53199F; 
 
     /* color heredado de body */  
     background-color: #FDC9E1;
@@ -76,7 +76,7 @@ ol {
 /*especificidad (0,0,1) */
 dt {
     /* background-color heredado de body*/
-    color: #8741E1; 
+    color: #53199F; 
     font-weight: bold; 
   }
 
@@ -116,7 +116,7 @@ header>nav a {
 /*especificidad (0,1,1)*/
 a:hover {
     /*background heredado de body*/
-    color: #8741E1;
+    color: #53199F;
 }
 
 /*tercer elemento de la lista no ordenada*/
