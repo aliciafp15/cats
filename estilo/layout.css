@@ -1,12 +1,12 @@
 /*datos personales Alicia Fernández Pushkina y UO275727*/
 
 /*especificidad (0,0,1) */
-header{
+header {
     display: flex;
-     /*los elemenetos se distribuyen*/
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 

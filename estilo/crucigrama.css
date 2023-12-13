@@ -1,15 +1,30 @@
 /*datos personales Alicia Fernández Pushkina y UO275727*/
 
 /*especificidad (0,0,1) */
+body {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+
+}
+
+/*especificidad (0,0,1) */
 main {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    /*11+1 porque incluye el h2*/
-    max-width: 80%;
-    padding-left: 10%; /* Ajustar padding izquierdo para centrar */
-
+    /*grid-template-rows: repeat(12, 1fr);*/
+    max-width: 95vw;
+    gap: 0;
+    align-self: center;
 }
+
+/*especificidad (0,0,1) */
+h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
 
 
 /*especificidad (0,1,1) */
@@ -25,11 +40,5 @@ p {
     text-align: center;
     border-style: solid;
     border-width: 0.063em;
-    border-color: rgb(152, 130, 177);
 }
 
-/*especificidad (0,0,1) */
-h2 {
-    grid-column: 1 / span 9;
-    /* Hacer que el primer elemento ocupe la primera fila */
-}

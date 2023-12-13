@@ -106,10 +106,15 @@ table>caption {
 
 
 
-/*especificidad (0,0,3) */
-header>nav a {
+/*especificidad (0,0,2) */
+header>nav a{
     /* background-color heredado de header*/
-    color: #FFFF;/* #B4FEE7;*/
+    color: #fff;/* #B4FEE7;*/
+
+}
+
+nav{
+    text-align: center;
 }
 
 /*enlace al pasar el ratón por encima*/

@@ -56,7 +56,8 @@ class Memoria {
     // comprueba si las cartas volteadas son iguales
     //Si lo son--> disableCards;    si no--> unflipCards. (utilizando operador ternario)
     checkForMatch(){
-        const isMatch = this.firstCard.dataset.element === this.secondCard.dataset.element;
+        this.firstCard.dataset.element.split('_')[0];//compara si es el mismo numero de cartaX
+        const isMatch = this.firstCard.dataset.element.split('_')[0] === this.secondCard.dataset.element.split('_')[0];
         isMatch ? this.disableCards() : this.unflipCards();
     }
 
@@ -68,7 +69,8 @@ class Memoria {
     }
 
     createElements(){
-        const tablero = document.querySelector('section')
+        const secciones = document.querySelectorAll('section')
+        const tablero = secciones[1];
         for (const carta in this.elements) {
                 const elementData = this.elements[carta];
 
@@ -108,11 +110,11 @@ class Memoria {
         if (this.dataset.state == 'revealed') return;
         if(game.lockBoard) return;
         if(game.firstCard != null){//Si la tarjeta pulsada por el usuario coincide con la tarjeta pulsada anteriormente como primer elemento de la pareja actual 
-            var primeraCarta = game.firstCard.dataset.element
-            var parejaPrimera = primeraCarta.split('_')[1];
-            var segundaCarta = this.dataset.element;
-            var segundaPareja = segundaCarta.split('_')[1];
-            if(parejaPrimera === segundaPareja) return; //el método retorna yno hace nada más.
+            // var primeraCarta = game.firstCard.dataset.element
+            // var parejaPrimera = primeraCarta.split('_')[1];
+            // var segundaCarta = this.dataset.element;
+            // var segundaPareja = segundaCarta.split('_')[1];
+            if(game.firstCard.dataset.element === this.dataset.element ) return; //el método retorna yno hace nada más.
         }
         this.dataset.state ='flip';
 
@@ -127,7 +129,4 @@ class Memoria {
     }
 
 }
-// // si el json está fuera de la clase, por lo que no será parte de la instancia de Memoria
-//--estaba pensado para estar fuera del constrcutor, pero dentro de la clase. Porque es algo que no va a cambiar y se usa mucho
-//--aun asi, me dijo que no está mal si lo tengo en el constructor.
 
