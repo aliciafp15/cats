@@ -11,6 +11,7 @@ article {
     border: 0.063em solid #ccc;
     margin-bottom: 1.25em;
     padding: 0.625em;
+    /* color heredado de body*/
     background-color: #f9f9f9;
     border-radius: 1.5em; 
 }

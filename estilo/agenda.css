@@ -20,11 +20,7 @@ article {
     width: calc(25% - 2em);
     box-sizing: border-box;
 }
-/*especificidad (0,0,1) */
- h3{
-    /* background-color heredado de body*/
-    color:black;
- }
+
 
 /*especificidad (0,0,2) */
 article p {
