@@ -40,7 +40,8 @@
   <main>
     <h2>Noticias</h2>
 
-    <input type="file" onchange=noticias.readInputFile(this.files) accept=".txt">
+    <label for="subirNoticias">Subir noticias:</label>
+    <input id="subirNoticias" type="file" onchange=noticias.readInputFile(this.files) accept=".txt" label="">
 
   </main>
   <script>
