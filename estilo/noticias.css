@@ -1,0 +1,82 @@
+/*datos personales Alicia Fernández Pushkina y UO275727*/
+
+/*especificidad (0,0,1) */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*especificidad (0,0,1) */
+article {
+    border: 0.063em solid #ccc;
+    margin-bottom: 1.25em;
+    padding: 0.625em;
+    background-color: #f9f9f9;
+    border-radius: 1.5em; 
+}
+
+/*especificidad (0,1,2) */
+main > input[type="file"] {
+    /*separa el botón de las noticias*/
+    margin-bottom:1em; 
+}
+
+/*especificidad (0,1,2) */
+article p:last-child {
+    /* Aplicar cursiva al último párrafo dentro de cada artículo */
+    font-style: italic;
+}
+
+/*  -----estilo a la sección de añadir CON GRID
+main > section {
+    display: grid;
+    gap: 1em;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr); 
+}
+
+main > section > h3 {
+    grid-row: 1;
+    place-self: center; 
+}
+
+main > section > p{
+    grid-row: 2; 
+    place-self: center; 
+}
+
+/*
+main > section > button {
+    grid-row: 3; 
+    place-self: center; 
+} */
+
+
+main > section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+main > section > p {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+}
+
+main > section > button {
+    margin-top: 1em; /* Espacio entre la línea de campos y el botón */
+}
+
+main > section > h3, main > section > button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+main > section > article {
+    display: flex; /* Mostrar los articles en la misma fila */
+    gap: 1em; /* Espacio entre articles */
+}

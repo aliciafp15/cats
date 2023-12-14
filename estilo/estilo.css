@@ -38,7 +38,7 @@ h2 {
 }
 
 /*especificidad (0,0,1) */
-h2, h3{
+h2{
     /* background-color heredado de body*/
     color: #DE026D;
 }
