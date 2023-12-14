@@ -43,24 +43,31 @@ class Pais {
             success: function(data) {
                 const filteredList = data.list.filter(item => item.dt_txt.includes('12:00:00'));
     
-                const article = $('<article>').attr('data-name', 'meteo');
+                // const article = $('<section>').attr('data-name', 'meteo');// una seccion que contenga 5 articulos
+                const section = $('<section>');// una seccion que contenga 5 articulos
+
     
                 filteredList.forEach(item => {
-                    // Crear un bloque section para cada día
-                    const daySection = $('<section>');
+                    // Crear un bloque article para cada día
+                    const dayArticle = $('<article>');
     
                     // Obtener los valores requeridos y asignar 0 si rain no está presente
-                    const tempMax = item.main.temp_max || 0;
-                    const tempMin = item.main.temp_min || 0;
-                    const humidity = item.main.humidity || 0;
-                    const rain = item.rain ? item.rain['3h'] : 0;
+                    var tempMax = item.main.temp_max || 0;
+                    var tempMin = item.main.temp_min || 0;
+                    var humidity = item.main.humidity || 0;
+                    var rain = item.rain ? item.rain['3h'] : 0;
+
+                    var aux = item.dt_txt.split(" ");
+                    var fecha = aux[0];
+
     
                     // Obtener la URL base para los iconos y agregar el nombre del icono
                     const iconUrlBase = 'http://openweathermap.org/img/wn/';
                     const iconUrl = `${iconUrlBase}${item.weather[0].icon}.png`;
     
                     // Agregar elementos al bloque del día
-                    daySection.html(`
+                    dayArticle.html(`
+                        <h3>${fecha}</h3>
                         <p>Temp. Máxima: ${tempMax}°C</p>
                         <p>Temp. Mínima: ${tempMin}°C</p>
                         <p>Humedad: ${humidity}%</p>
@@ -68,10 +75,10 @@ class Pais {
                         <img src="${iconUrl}" alt="Icono del tiempo">
                     `);
     
-                    article.append(daySection);
+                    section.append(dayArticle);
                 });
     
-                $('body').append(article);
+                $('body').append(section);
                 console.log(filteredList);
             },
             error: function(error) {

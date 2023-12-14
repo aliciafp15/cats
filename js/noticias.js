@@ -69,18 +69,19 @@ class Noticias {
     redactarNoticiasPropias() {
         // Sección para la nueva noticia
         $("main").append("<section></section>");
-
+    
         // Añadir elementos a la sección
         $("main>section:last")
             .append("<h3>Nueva noticia</h3>")
-            .append("<p>Titulo: <input type='text' placeholder='Inserte el titulo' required></p>")
-            .append("<p>Subtitulo: <input type='text' placeholder='Inserte el subtitulo' required></p>")
-            .append("<p>Contenido:<textarea name='contenidoNoticia' required></textarea></p> ")
-            .append("<p>Autor: <input type='text' placeholder='Inserte el autor' required></p>")
+            .append("<p><label for='titulo'>Titulo:</label> <input type='text' id='titulo' placeholder='Inserte el titulo' required></p>")
+            .append("<p><label for='subtitulo'>Subtitulo:</label> <input type='text' id='subtitulo' placeholder='Inserte el subtitulo' required></p>")
+            .append("<p><label for='contenidoNoticia'>Contenido:</label> <textarea id='contenidoNoticia' name='contenidoNoticia' required></textarea></p>")
+            .append("<p><label for='autor'>Autor:</label> <input type='text' id='autor' placeholder='Inserte el autor' required></p>")
             .append("<button type='button'>Añadir</button>")
             .find("button") // Busca el último botón dentro de la sección
             .on("click", () => this.incluirNuevaNoticiaHTML());
     }
+    
 
 
     incluirNuevaNoticiaHTML() {
