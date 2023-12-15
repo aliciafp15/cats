@@ -33,6 +33,12 @@ p[data-state="empty"] {
     background-color: black;
 }
 
+/*especificidad (0,1,1) */
+p[data-state="clicked"] {
+    /*color hereado de body*/
+    background-color: #DDD;
+}
+
 /*especificidad (0,0,1) */
 p {
     padding: 1em;
@@ -42,3 +48,36 @@ p {
     border-width: 0.063em;
 }
 
+section[data-type=botonera] {
+    display: none;
+}
+
+/* botonera para dispositvos moviles*/
+@media all and (max-width: 1024px) {
+
+    section[data-type=botonera] {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    section[data-type=botonera] h3 {
+        width: 100%;
+        text-align: center;
+    }
+    
+    section[data-type=botonera] button {
+        width: calc(15% - 1em);
+        height: 4em;
+        text-align: center;
+        background-color: #000;
+        color: #FFF;
+    }
+  
+  
+  }
+
+
+ 
