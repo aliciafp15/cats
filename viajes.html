@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 
 <html lang="es">
-  <head>
-    <!-- Datos que describen el documento -->
-    <meta charset="UTF-8" />
-    <title>Escritorio Virtual - Viajes</title>
-    <meta name="author" content="Alicia Fernández Pushkina" />
-    <meta name="description" content="aquí cada documento debe tener la  descripción del contenido concreto del mismo" />
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
-     <!-- Definir la ventana gráfica -->
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link href="multimedia/imagenes/favicon.ico" rel="icon"/>
-  </head>
 
-  <body>
-    <header>
-      <!-- Datos con el contenidos que aparece en el navegador -->
-      <h1>Escritorio Virtual</h1>
-  
-      <nav>
-        <a accesskey="i" href="index.html" tabindex="1">Index</a>
-        <a accesskey="s" href="sobremi.html" tabindex="2">Sobre mí</a>
-        <a accesskey="n" href="noticias.html" tabindex="3">Noticias</a>
-        <a accesskey="a" href="agenda.html" tabindex="4">Agenda</a>
-        <a accesskey="m" href="metereologia.html" tabindex="5">Metereología</a>
-        <a accesskey="v" href="viajes.html" tabindex="6">Viajes</a>
-        <a accesskey="j" href="juegos.html" tabindex="7">Juegos</a>
-      </nav>
-    </header>
-    <!--<main>-->
-    <h2>Viajes</h2>
-    <p>En desarrollo.</p>
-  </body>
+<head>
+  <!-- Datos que describen el documento -->
+  <meta charset="UTF-8" />
+  <title>Escritorio Virtual - Viajes</title>
+  <meta name="author" content="Alicia Fernández Pushkina" />
+  <meta name="description" content="aquí cada documento debe tener la  descripción del contenido concreto del mismo" />
+  <meta name="keywords"
+    content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+  <!-- Definir la ventana gráfica -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+  <link href="multimedia/imagenes/favicon.ico" rel="icon" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+  <script src="js/viajes.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <h1>Escritorio Virtual</h1>
+
+    <nav>
+      <a accesskey="i" href="index.html" tabindex="1">Index</a>
+      <a accesskey="s" href="sobremi.html" tabindex="2">Sobre mí</a>
+      <a accesskey="n" href="noticias.html" tabindex="3">Noticias</a>
+      <a accesskey="a" href="agenda.html" tabindex="4">Agenda</a>
+      <a accesskey="m" href="metereologia.html" tabindex="5">Metereología</a>
+      <a accesskey="v" href="viajes.html" tabindex="6">Viajes</a>
+      <a accesskey="j" href="juegos.html" tabindex="7">Juegos</a>
+    </nav>
+  </header>
+  <!--<main>-->
+  <h2>Viajes</h2>
+
+  <main>
+
+  </main>
+
+  <script>
+    var v = new Viajes();
+    v.mapaEstatico();
+  </script>
+</body>
+
 </html>
