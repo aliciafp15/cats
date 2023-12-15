@@ -51,9 +51,26 @@
     <h3>Crucigrama</h2>
   </main>
 
+  <section data-type="botonera">
+    <h3>Botonera</h3>
+    <button onclick="crucigrama.introduceElement(1)">1</button>
+    <button onclick="crucigrama.introduceElement(2)">2</button>
+    <button onclick="crucigrama.introduceElement(3)">3</button>
+    <button onclick="crucigrama.introduceElement(4)">4</button>
+    <button onclick="crucigrama.introduceElement(5)">5</button>
+    <button onclick="crucigrama.introduceElement(6)">6</button>
+    <button onclick="crucigrama.introduceElement(7)">7</button>
+    <button onclick="crucigrama.introduceElement(8)">8</button>
+    <button onclick="crucigrama.introduceElement(9)">9</button>
+    <button onclick="crucigrama.introduceElement('*')">*</button>
+    <button onclick="crucigrama.introduceElement('+')">+</button>
+    <button onclick="crucigrama.introduceElement('-')">-</button>
+    <button onclick="crucigrama.introduceElement('/')">/</button>
+  </section>
+
   <script>
-    var juego = new Crucigrama()
-    juego.paintMathword();
+    var crucigrama = new Crucigrama()
+    crucigrama.paintMathword();
 
     document.addEventListener("keydown", (event) => {
       const isDigit = /[0-9]/.test(event.key);
@@ -66,7 +83,7 @@
         if (!selectedCell) {
           alert("Tienes que seleccionar una celda");
         } else {
-          juego.introduceElement(event.key);
+          crucigrama.introduceElement(event.key);
         }
       }
 
