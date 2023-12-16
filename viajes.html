@@ -14,11 +14,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
   <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+  <link rel="stylesheet" type="text/css" href="estilo/viajes.css" />
   <link href="multimedia/imagenes/favicon.ico" rel="icon" />
+
+  <!--inicio imports para el mapa dinamico-->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css' rel='stylesheet' />
+  <!--fin imports para el mapa dinamico-->
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf0Vt1Lv1MujAh-b-7HHRvwDl49DSRjhg&callback=initMap" async defer></script> <!--api de google maps-->
   <script src="js/viajes.js"></script>
+
+
+
 </head>
 
 <body>
@@ -39,12 +48,38 @@
   <!--<main>-->
   <h2>Viajes</h2>
 
-  <main id="mapa">
+  <main>
+    <section>
+      <!-- mapa estatico -->
+    </section>
+    <section id="map">
+      <!-- mapa dinamico -->
+    </section>
+
+    <article>
+
+      <!-- seccion para rellenar con lo procesado por el xml -->
+     
+        <h3>Carga de archivos</h3>
+        
+        
+
+      <p>Carga archivos KML para representar planimetría en el mapa dinámico</p>
+      <input type="file" accept=".kml" onchange=v.procesarPlanimetria(this.files) multiple>
+      <section id="mapPlanimetria"></section>
+
+      <p>Carga rutasEsquema.xml para ver su contenido: </p>
+        <input type="file" accept=".xml" onchange=v.procesarXml(this.files)>
+
+      <!-- <p>Carga archivos SVG para representar altimetría en el documento</p>
+      <input type="file" accept=".svg"  onchange=v.procesarAltimetria(this.files)" multiple> -->
+      </section>
 
   </main>
 
   <script>
     var v = new Viajes();
+
   </script>
 </body>
 
