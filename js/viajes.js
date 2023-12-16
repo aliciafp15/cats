@@ -47,23 +47,33 @@ class Viajes {
         var zoom = "14"
         var tam = "/500x300"
 
-        this.imagenMapa = url + centro + zoom + tam + apiKey;
+        // Agregar el marcador a las coordenadas de tu posición
+        var marcador = "pin-s-l+000(" + this.longitud + "," + this.latitud + ")/";
+
+        // this.imagenMapa = url + centro + zoom + tam + apiKey;
+        this.imagenMapa = url + marcador + centro + zoom + tam + apiKey;//con chincheta
+        console.log(this.imagenMapa)
         $("main>section").first().append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
     }
 
     getMapaDinamicoMapBox() {
 
-        var lat = parseFloat(this.longitud);
-        var lng = parseFloat(this.latitud)
+        var lng = parseFloat(this.longitud);
+        var lat = parseFloat(this.latitud)
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbGdzMnZweWowZWEyM2NvYWZkODMxZXpoIn0.ghWod73o3jm9F1lPOhfsjw';
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            center: [lat, lng], // starting position [lng, lat]
+            center: [lng, lat], // starting position [lng, lat]
             zoom: 9, // starting zoom
 
         });
         // no necesito añadir el mapa al DOM si ya tengo el contenedor
+
+        // añadir marcador de posicion
+        const marker = new mapboxgl.Marker()
+            .setLngLat([lng, lat])
+            .addTo(map);
     }
 
     procesarXml(files) {
@@ -167,7 +177,7 @@ class Viajes {
                 const coordenadas = this.parsearKML(contenidoKML);
 
                 if (coordenadas.length > 0) {
-                    this.agregarRutaAlMapa(coordenadas,i);//i=idRUta
+                    this.agregarRutaAlMapa(coordenadas, i);//i=idRUta
                 } else {
                     console.error('El archivo KML no contiene coordenadas válidas.');
                 }
@@ -200,7 +210,7 @@ class Viajes {
     }
 
     agregarRutaAlMapa(coordenadas, rutaId) {
-            //     //tengo que crear el nuevo mapa dinamico
+        //     //tengo que crear el nuevo mapa dinamico
         var lng = 31.0533700;//coordenadas de la capital de zimbabure, harare
         var lat = -17.8277200;
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbGdzMnZweWowZWEyM2NvYWZkODMxZXpoIn0.ghWod73o3jm9F1lPOhfsjw';
@@ -214,15 +224,15 @@ class Viajes {
                 zoom: 5,
             });
         }
-    
+
         // Esperar a que se cargue el estilo antes de agregar la capa
         this.mapPlanimetria.on('style.load', () => {
             const sourceId = `route-source-${rutaId}`;
             const layerId = `route-layer-${rutaId}`;
-    
+
             // Verificar si la fuente ya existe en el mapa
             let source = this.mapPlanimetria.getSource(sourceId);
-    
+
             if (!source) {
                 // Agregar la fuente solo si no existe
                 this.mapPlanimetria.addSource(sourceId, {
@@ -247,10 +257,10 @@ class Viajes {
                     }
                 });
             }
-    
+
             // Verificar si la capa ya existe en el mapa
             let layer = this.mapPlanimetria.getLayer(layerId);
-    
+
             if (!layer) {
                 // Agregar la capa solo si no existe
                 this.mapPlanimetria.addLayer({
@@ -269,7 +279,7 @@ class Viajes {
             }
         });
     }
-    
+
 
     // agregarRutaAlMapa(coordenadas, rutaId) {
     //     //tengo que crear el nuevo mapa dinamico
