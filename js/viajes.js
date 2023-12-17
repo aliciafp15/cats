@@ -52,7 +52,6 @@ class Viajes {
 
         // this.imagenMapa = url + centro + zoom + tam + apiKey;
         this.imagenMapa = url + marcador + centro + zoom + tam + apiKey;//con chincheta
-        console.log(this.imagenMapa)
         $("main>section").first().append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
     }
 
@@ -72,7 +71,7 @@ class Viajes {
 
         // añadir marcador de posicion
         const marker = new mapboxgl.Marker()
-            .setLngLat([lng, lat]) 
+            .setLngLat([lng, lat])
             .addTo(map);
     }
 
@@ -85,8 +84,6 @@ class Viajes {
             reader.onload = (e) => {
                 const contenidoXml = e.target.result;
                 const contenidoHtml = this.parsearXmlAHtml(contenidoXml);
-                // Aquí puedes procesar el contenidoXml según tus necesidades
-                console.log(contenidoXml);
                 $("main>article").append(contenidoHtml);
             };
 
@@ -120,6 +117,9 @@ class Viajes {
             const referencias = datos.find("referencias").text();
             const recomendacion = datos.find("recomendacion").text();
 
+
+
+
             html += `
             <p>Tipo de Ruta: ${tipoRuta}</p>
             <p>Transporte: ${transporte}</p>
@@ -145,14 +145,32 @@ class Viajes {
                     const altitud = $(hito).find("coordenadasHito > altitud").text();
                     const distancia = $(hito).find("distancia").text();
 
+                    const nombreFoto = $(hito).find("fotografias").text(); //nombreFoto.jpg
+                    //procesar las fotografias y hacerlas adaptables:  movil(_p)/tablet(_m)/ordenador(g)
+                    if (nombreFoto.trim() !== "") {//si hay fotos
+                        var nombreTratado = nombreFoto.trim().split('.')[0];// me quedo solo con el nombre sin extension
+                        var fotoHtml = `<picture>
+                        <source srcset="multimedia/imagenes/rutas/${nombreTratado}_p.jpg" media="(max-width: 465px)" /> 
+                        <source srcset="multimedia/imagenes/rutas/${nombreTratado}_m.jpg" media="(max-width: 799px)" />
+                        <source srcset="multimedia/imagenes/rutas/${nombreTratado}_g.jpg" media="(min-width: 800px)" />
+                        <img src="multimedia/imagenes/rutas/${nombreTratado}_g.jpg" alt="${nombreFoto}" />
+                        </picture>`
+                        
+                    }
+                    //
+
                     html += `
                 <h4>${nombreHito}</h4>
                 <p>${descripcionHito}</p>
                 <p>Coordenadas del Hito: (${latitudHito}, ${longitudHito})</p>
                 <p>Altitud: ${altitud} m</p>
                 <p>Distancia dle hito anterior: ${distancia} m</p>
+                <p>${fotoHtml}</p>
               `;
                 });
+
+
+
         });
 
         return html;
