@@ -45,17 +45,25 @@ class Viajes {
         var url = "https://api.mapbox.com/styles/v1/mapbox/light-v11/static/"
         var centro = this.longitud + ',' + this.latitud + ','
         var zoom = "14"
-        var tam = "/500x300"
+        var tam = "/350x200"
 
         // Agregar el marcador a las coordenadas de tu posición
         var marcador = "pin-s-l+000(" + this.longitud + "," + this.latitud + ")/";
 
         // this.imagenMapa = url + centro + zoom + tam + apiKey;
         this.imagenMapa = url + marcador + centro + zoom + tam + apiKey;//con chincheta
-        $("main>section").first().append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
+
+        var section = $("<section>").attr("data-element", "estatico");
+        section.append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
+        $("main h2:first-child").after(section);//incluirlo arriba del todo, debajo del h2
+        // $("main>section").first().append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
     }
 
     getMapaDinamicoMapBox() {
+        var seccionMapaDinamico = $("main > section:nth-child(3)");
+        seccionMapaDinamico.attr("data-element", "mapaDinamico");
+
+
 
         var lng = parseFloat(this.longitud);
         var lat = parseFloat(this.latitud)
@@ -84,7 +92,13 @@ class Viajes {
             reader.onload = (e) => {
                 const contenidoXml = e.target.result;
                 const contenidoHtml = this.parsearXmlAHtml(contenidoXml);
-                $("main>article").append(contenidoHtml);
+
+                //recupero la seccion en la que está, y le pongo e atributo para encontrarlo después
+                //añade el contenido a su section, el cuarto elemento del main
+                var seccionPlanimetria = $("main > section:nth-child(4)");
+                seccionPlanimetria.attr("data-element", "seccionXml");
+
+                $("main > section:nth-child(4)").append(contenidoHtml);
             };
 
             reader.readAsText(file);
@@ -155,7 +169,7 @@ class Viajes {
                         <source srcset="multimedia/imagenes/rutas/${nombreTratado}_g.jpg" media="(min-width: 800px)" />
                         <img src="multimedia/imagenes/rutas/${nombreTratado}_g.jpg" alt="${nombreFoto}" />
                         </picture>`
-                        
+
                     }
                     //
 
@@ -196,6 +210,9 @@ class Viajes {
 
                 if (coordenadas.length > 0) {
                     this.agregarRutaAlMapa(coordenadas, i);//i=idRUta
+                    //darle un tamaño
+                    var seccionKml = $("main > section:nth-child(5)").attr("data-element", "planimetria");
+                    
                 } else {
                     console.error('El archivo KML no contiene coordenadas válidas.');
                 }
@@ -305,18 +322,22 @@ class Viajes {
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
             const reader = new FileReader();
-            var section = $("<section>").attr("data-element", "planimetria");
+            var section = $("<section>").attr("data-element", "altimetria");
             reader.onload = (e) => {
                 let xml = $.parseXML(reader.result);
                 //version al svg para el validador
                 let svg = $(xml).find("svg");
                 svg.attr("version", "1.1");
-                section.append(svg);
+
+                // lo añado a la section suya, el sexto hijo de main
+                // $("main > section:nth-child(6)").append(svg);
+                var seccionSvg = $("main > section:nth-child(6)").attr("data-element", "altimetria");
+                seccionSvg.append(svg);
             };
 
             reader.readAsText(file);
         }
-        $("main").append(section);
+        // $("main").append(section);
     }
 
 
