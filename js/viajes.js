@@ -72,7 +72,7 @@ class Viajes {
 
         // añadir marcador de posicion
         const marker = new mapboxgl.Marker()
-            .setLngLat([lng, lat])
+            .setLngLat([lng, lat]) 
             .addTo(map);
     }
 
@@ -281,86 +281,27 @@ class Viajes {
     }
 
 
-    // agregarRutaAlMapa(coordenadas, rutaId) {
-    //     //tengo que crear el nuevo mapa dinamico
-    //     var lng = 31.0533700;//coordenadas de la capital de zimbabure, harare
-    //     var lat = -17.8277200;
-    //     mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbGdzMnZweWowZWEyM2NvYWZkODMxZXpoIn0.ghWod73o3jm9F1lPOhfsjw';
+    // representar la informacion de perfil1.svg, perfil2.svg y perfil3.svg en un mapa dinamico
+    procesarAltimetria(files) {
+
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+            var section = $("<section>").attr("data-element", "planimetria");
+            reader.onload = (e) => {
+                let xml = $.parseXML(reader.result);
+                //version al svg para el validador
+                let svg = $(xml).find("svg");
+                svg.attr("version", "1.1");
+                section.append(svg);
+            };
+
+            reader.readAsText(file);
+        }
+        $("main").append(section);
+    }
 
 
-    //     // Crear el mapa si aún no está creado
-    //     if (!this.mapPlanimetria) {
-    //         this.mapPlanimetria = new mapboxgl.Map({
-    //             container: 'mapPlanimetria',
-    //             style: 'mapbox://styles/mapbox/streets-v12',
-    //             center: [lng, lat],
-    //             zoom: 8,
-    //         });
-    //     }
-
-
-    //     // const map = new mapboxgl.Map({
-    //     //     container: 'mapPlanimetria', 
-    //     //     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    //     //     center: [lng, lat], // starting position [lng, lat]
-    //     //     zoom:8, // starting zoom
-
-    //     // });
-
-    //     // Esperar a que se cargue el estilo antes de agregar la capa
-    //     this.mapPlanimetria.on('style.load', () => {
-    //         const sourceId = `route-source-${rutaId}`;
-    //         const layerId = `route-layer-${rutaId}`;
-
-    //         // Verificar si la fuente ya existe en el mapa
-    //         let source = this.mapPlanimetria.getSource(sourceId);
-
-    //         if (!source) {
-
-    //             //agrego la ruta
-    //             this.mapPlanimetria.addSource('route', {
-    //                 'type': 'geojson',
-    //                 'data': {
-    //                     'type': 'Feature',
-    //                     'properties': {},
-    //                     'geometry': {
-    //                         'type': 'LineString',
-    //                         'coordinates': coordenadas
-    //                     }
-    //                 }
-    //             });
-    //         } else {
-    //             // Actualizar las coordenadas de la fuente existente
-    //             source.setData({
-    //                 type: 'Feature',
-    //                 properties: {},
-    //                 geometry: {
-    //                     type: 'LineString',
-    //                     coordinates: coordenadas
-    //                 }
-    //             });
-    //         }
-
-    //         // Verificar si la capa ya existe en el mapa
-    //         let layer = this.mapPlanimetria.getLayer(layerId);
-
-    //         if (!layer) {
-    //             this.mapPlanimetria.addLayer({
-    //                 'id': 'route',
-    //                 'type': 'line',
-    //                 'source': 'route',
-    //                 'layout': {
-    //                     'line-join': 'round',
-    //                     'line-cap': 'round'
-    //                 },
-    //                 'paint': {
-    //                     'line-color': '#FF0000',//linea en rojo de la ruta
-    //                     'line-width': 8
-    //                 }
-    //             });
-    //         }
-    //     })
-    // }
 
 
 
