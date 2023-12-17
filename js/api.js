@@ -11,11 +11,6 @@ class Reproductor {
         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
         this.audioSource = null;
         this.analyser = null;
-
-        //lista de reproducción
-        this.listaCanciones = [];
-        this.cancionActual = null;
-
         // Fuente de audio actualmente conectada
         this.sourceNode = null;
 
@@ -23,9 +18,12 @@ class Reproductor {
         $('main').append(this.audio);
         $('main').append(this.canvas);
 
+        
         this.cargarCancionAlmacenada();
-        // this.audio.on('play', this.iniciarVisualizacion.bind(this));
-        // this.iniciarVisualizacion();
+         // Agrega un listener para el evento 'play' en el constructor
+         this.audio[0].addEventListener('play', () => {
+            this.iniciarVisualizacion();
+        });
     }
 
     cargarCancion(files) {
@@ -51,31 +49,54 @@ class Reproductor {
         }
     }
 
+    // cargarCancionAlmacenada() {
+    //     //API web audio
+    //     //almacenar el nombre y la URL de la canción actual, lo que permite persistir esa información incluso después de cerrar y volver a abrir el navegador.
+    //     const storedSongURL = localStorage.getItem('currentSongURL');
+
+    //     if (storedSongURL!= null) {
+    //         // Verifica si la URL almacenada es válida antes de establecerla en el elemento audio
+    //         const audio = this.audio[0];
+    //         const storedSong = localStorage.getItem('currentSong');
+    //         console.log(audio)
+    //         console.log(storedSong)
+    //         if (storedSong && storedSongURL) {
+    //             this.audio.attr('src', storedSongURL);
+    //         }
+    //         // if (audio && audio.canPlayType && audio.canPlayType('audio/*')) {
+    //         //     this.audio.attr('src', storedSongURL);
+    //         // }
+    //     }
+    // }
+
     cargarCancionAlmacenada() {
         const storedSongURL = localStorage.getItem('currentSongURL');
-
-        if (storedSongURL) {
-            // Verifica si la URL almacenada es válida antes de establecerla en el elemento audio
-            const audio = this.audio[0];
-            if (audio && audio.canPlayType && audio.canPlayType('audio/*')) {
-                this.audio.attr('src', storedSongURL);
-            }
+        const storedSongName = localStorage.getItem('currentSong');
+    
+        if (storedSongURL && storedSongName) {
+            //solo persisten los audios que tengo en la carpeta multimedia, storedSongURL es un blov
+            const songURL = `multimedia/audios/${storedSongName}`;
+            this.audio.attr('src', songURL);
         }
     }
+    
 
-    //añadir la canción a la lista de reproducción
-    agregarCancion(cancion) {
-        this.listaCanciones.push(cancion);
-    }
 
-    reproducirCancion(index) {
-        this.cancionActual = this.listaCanciones[index];
-        // Lógica para reproducir la canción
-    }
+
+  
 
     iniciarVisualizacion() {
-        // Detener la reproducción actual antes de cargar una nueva canción
-        this.audio[0].pause();
+        //fragmento de codigo para reproducir la cancion si ya está guardada por la API Web Storage
+         // Detener la reproducción actual antes de cargar una nueva canción
+        //  this.audio[0].pause();
+        //  this.audioContext.resume().then(() => {
+        //      // Desconectar cualquier nodo anterior antes de conectar uno nuevo
+        //      if (this.sourceNode) {
+        //          this.sourceNode.disconnect();
+        //      }
+
+        //  });
+         //----------------------------
 
         if (this.audioSource == null) {
             this.audioSource = this.audioContext.createMediaElementSource(this.audio[0]);
