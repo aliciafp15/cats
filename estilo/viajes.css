@@ -1,18 +1,21 @@
 
-main > section{/* para que los mapas se visualicen*/
+section[data-element="mapaDinamico"]{
+    /* ajusta el segundo section del main, elm mapa dinámico de la pos actual */
     height: 35vh;
  }
 
- main >article>section{
+ section[data-element="planimetria"]> section{
+    /* ajusta la seccion del mapa dinamico de planimetria */
     height: 35vh;
-} 
+}
 
-section[data-element="planimetria"] {
+
+section[data-element="altimetria"] {
     display: flex;
     flex-direction: column;
     height: auto;  
 }
 
-section[data-element="planimetria"] svg {
+section[data-element="altimetria"] svg {
     max-height: 100vh; /* Limita la altura al 100% del viewport height */
 }
