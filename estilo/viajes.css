@@ -1,0 +1,18 @@
+
+main > section{/* para que los mapas se visualicen*/
+    height: 35vh;
+ }
+
+ main >article>section{
+    height: 35vh;
+} 
+
+section[data-element="planimetria"] {
+    display: flex;
+    flex-direction: column;
+    height: auto;  
+}
+
+section[data-element="planimetria"] svg {
+    max-height: 100vh; /* Limita la altura al 100% del viewport height */
+}
