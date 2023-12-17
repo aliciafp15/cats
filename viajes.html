@@ -46,34 +46,36 @@
     </nav>
   </header>
   <!--<main>-->
-  <h2>Viajes</h2>
+
 
   <main>
-    <section>
-      <!-- mapa estatico -->
-    </section>
+    <h2>Viajes</h2>
     <section id="map">
       <!-- mapa dinamico -->
     </section>
 
-    <article>
 
-      <!-- seccion para rellenar con lo procesado por el xml -->
-     
-        <h3>Carga de archivos</h3>
-        
-        
+    <section>
+      <h3>Carga de archivos</h3>
+      <p>Carga rutasEsquema.xml para ver su contenido: </p>
+      <input type="file" accept=".xml" onchange=v.procesarXml(this.files)>
+    </section>
 
+    <section>
       <p>Carga archivos KML para representar planimetría en el mapa dinámico</p>
       <input type="file" accept=".kml" onchange=v.procesarPlanimetria(this.files) multiple>
-      <section id="mapPlanimetria"></section>
 
-      <p>Carga rutasEsquema.xml para ver su contenido: </p>
-        <input type="file" accept=".xml" onchange=v.procesarXml(this.files)>
-
-      <p>Carga archivos SVG para representar altimetría en el documento</p>
-      <input type="file" accept=".svg"  onchange=v.procesarAltimetria(this.files) multiple>
+      <section id="mapPlanimetria">
+        <!-- mapa dinamico para la planimetria -->
       </section>
+      
+    </section>
+
+
+    <section>
+      <p>Carga archivos SVG para representar altimetría en el documento</p>
+      <input type="file" accept=".svg" onchange=v.procesarAltimetria(this.files) multiple>
+    </section>
 
   </main>
 
