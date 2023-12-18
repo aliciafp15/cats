@@ -19,6 +19,16 @@ header > nav {
     flex-direction: row;
 }
 
+/* menu de juegos */
+nav {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+}
 @media (max-width: 465px) {
    
 
@@ -29,10 +39,7 @@ header > nav {
         padding-bottom: 0.36em;
     }
 
-    /*Especificidad 011*/
-    section:first-of-type {
-        flex-direction: column; /*Redefiniendo la direccion de row a column*/
-    }
+
 }
 
 
