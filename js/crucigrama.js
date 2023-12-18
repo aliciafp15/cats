@@ -15,7 +15,19 @@ class Crucigrama {
     init_time;// momento en el que se inicia el juego
     end_time; // momento en el que se termina el juego
     tablero = new Array();
+
+
+    // NIVEL FACIL
     cadena = this.facil // cambiar nivel aqui
+    nivel= "facil";
+
+    // // NIVEL MEDIO
+    // cadena = this.medio // cambiar nivel aqui
+    // nivel= "medio";
+
+    // // NIVEL DIFICIL
+    // cadena = this.dificil // cambiar nivel aqui
+    // nivel= "dificil";
 
 
     constructor() {
@@ -50,7 +62,6 @@ class Crucigrama {
                 contador++;
             }
         }
-        console.log(this.tablero);
     }
 
 
@@ -58,7 +69,7 @@ class Crucigrama {
     Luego  inicializa la variable init_time de la clase Crucigrama al valor de la fecha actual.*/
     paintMathword() {
         //reiniciamos el crucigrama, comentado porque me borra el h3
-       // $("main").empty();
+        // $("main").empty();
 
         //si selecciono una celda pero noe scribo nada, y selecciono otra, la primera a qué estado vuelve?
         for (let fila = 0; fila < this.numFil; fila++) {
@@ -104,14 +115,13 @@ class Crucigrama {
     hacerClick(nuevaCelda, fila, col) {
         // Eliminar el estado "clicked" de todas las celdas
         $("main>p[data-state='clicked']").removeAttr("data-state");
-       
+
         const currentState = nuevaCelda.attr("data-state");
         //vigila no clicar de nuevo una celda ya corregida
         if (currentState !== "correct") {
             nuevaCelda.attr("data-state", "clicked");
             nuevaCelda.attr("data-fila", fila);
             nuevaCelda.attr("data-col", col);
-            console.log("Celda clicada:", fila, col);
         }
     }
 
@@ -149,7 +159,7 @@ class Crucigrama {
             (minutos / 10 >= 1.0 ? minutos : "0" + minutos) + ":" +
             (segundos / 10 >= 1.0 ? segundos : "0" + segundos);
         console.log(resultado);
-    
+
         return resultado;
 
     }
@@ -189,7 +199,7 @@ class Crucigrama {
 
 
         //comprobar final del crucigrama
-        if(this.check_win_condition()){
+        if (this.check_win_condition()) {
             //iniciar endtime
             this.end_time = new Date();
 
@@ -198,6 +208,7 @@ class Crucigrama {
 
             //avisar al usuario
             alert("El juego ha terminado!!. Duración: " + tiempoFinal)
+            this.createRecordForm();
         }
 
 
@@ -293,6 +304,41 @@ class Crucigrama {
         }
 
         return expression_col;
+    }
+
+
+    /** Añade un formulario mediante jquuery al final cuando se ha completado el crucigrama */
+    createRecordForm() {
+        // Crear el formulario
+        const form = $("<form></form>");
+        
+        // form.attr("id", "recordForm");
+        form.attr("action", "#"); // la URL correcta para procesar el formulario en tu servidor
+        form.attr("method", "post");
+        form.attr("name", "record");
+
+        // Agregar campos al formulario 
+        form.append('<label for="nombre">Nombre:</label>');
+        form.append('<input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre">');
+
+
+        form.append('<label for="apellidos">Apellidos:</label>');
+        form.append('<input type="text" id="apellidos" name="apellidos" required placeholder="Ingrese sus apellidos">');
+
+        // Agregar un campo oculto para el tiempo que tardó el usuario y el nivel
+        const tiempoFinal = this.calculate_date_difference();
+        form.append(`<input type="text" name="tiempo" value="${tiempoFinal}" readonly />  `);
+
+        const nivel = this.nivel;
+        form.append(`<input type="text"  name="nivel" value="${nivel}" readonly /> `);
+
+
+        // Agregar un botón de envío
+        form.append('<input type="submit" value="Guardar registro">');
+
+        // Agregar el formulario al final del documento
+        $("body").append(form);
+
     }
 
 
