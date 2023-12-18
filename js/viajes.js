@@ -2,9 +2,13 @@ class Viajes {
 
     // Define un atributo para almacenar el mapa de rutas
     mapPlanimetria = null;
+    curSlide = 0; //la primera imagen del carrusel será la 0
+    slides;
 
     constructor() {
         navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this), this.verErrores.bind(this));
+        this.slides = document.querySelectorAll("main>article>img");//reune las imagenes dle carrusel;
+        console.log(this.slides);
     }
 
     getPosicion(posicion) {
@@ -20,6 +24,8 @@ class Viajes {
         // this.initMap();
         this.getMapaEstaticoMapBox();
         this.getMapaDinamicoMapBox();
+
+
     }
 
     verErrores(error) {
@@ -212,7 +218,7 @@ class Viajes {
                     this.agregarRutaAlMapa(coordenadas, i);//i=idRUta
                     //darle un tamaño
                     var seccionKml = $("main > section:nth-child(5)").attr("data-element", "planimetria");
-                    
+
                 } else {
                     console.error('El archivo KML no contiene coordenadas válidas.');
                 }
@@ -340,6 +346,50 @@ class Viajes {
         // $("main").append(section);
     }
 
+    fotoSiguiente() {
+
+        // maximum number of slides
+        var maxSlide = 9;//son 10 imagenes, pero empiezo desde la 0
+
+
+        // check if current slide is the last and reset current slide
+        if (this.curSlide === maxSlide) {
+            this.curSlide = 0;
+        } else {
+            this.curSlide++;
+        }
+
+        //   move slide by -100%
+        this.slides.forEach((slide, indx) => {
+            var trans = 100 * (indx - this.curSlide);
+            $(slide).css('transform', 'translateX(' + trans + '%)')
+        });
+        console.log('foto actual')
+        console.log(this.curSlide)
+
+
+    }
+
+    fotoAnterior() {
+
+        // maximum number of slides
+        var maxSlide = 9;//son 10 imagenes, pero empiezo desde la 0
+
+
+        // check if current slide is the last and reset current slide
+        if (this.curSlide === 0) {
+            this.curSlide = maxSlide;
+        } else {
+            this.curSlide--;
+        }
+
+        //   move slide by -100%
+        this.slides.forEach((slide, indx) => {
+            var trans = 100 * (indx - this.curSlide);
+            $(slide).css('transform', 'translateX(' + trans + '%)')
+        });
+
+    }
 
 
 
