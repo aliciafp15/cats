@@ -1,0 +1,48 @@
+article[data-element="carrusel"] {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden; 
+    border-radius: 2em;
+  }
+  article[data-element="carrusel"] h3 {
+      width: 100%;
+      text-align: center;
+  }
+  article[data-element="carrusel"] img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    /* transition: all 0.5s; */
+    object-fit: cover;
+    border-radius: 2em;
+  }
+
+  article[data-element="carrusel"] button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff; /*Color heredado de boy*/
+  }
+
+
+  article[data-element="carrusel"] button:active {
+    transform: scale(1.1);
+  }
+  
+  article[data-element="carrusel"] button[data-action=prev] {
+    top: 50%;
+    left: 2%;
+  }
+  
+  article[data-element="carrusel"] button[data-action=next] {
+    top: 50%;
+    right: 2%;
+  }

@@ -19,3 +19,6 @@ section[data-element="altimetria"] {
 section[data-element="altimetria"] svg {
     max-height: 100vh; /* Limita la altura al 100% del viewport height */
 }
+
+
+
