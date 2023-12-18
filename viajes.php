@@ -15,39 +15,70 @@ class Carrusel
 
   function obtenerImagenes()
   {
-      $apiKey = '87cd7336be903190374dc6fef69b087f';
-      $flickrAPI = "https://www.flickr.com/services/rest/?method=flickr.photos.search";
-  
-      $params = array(
-          'api_key' => $apiKey,
-          'tags' => $this->pais . ',' . $this->capital,
-          'format' => 'json',
-          'per_page' => 10,
-          'nojsoncallback' => '1',
-          'sort' => 'relevance',  // Ordenar por relevancia
-      );
-  
-      $url = $flickrAPI . '&' . http_build_query($params);
-      $respuesta = file_get_contents($url);
-      $data = json_decode($respuesta, true);
-  
-      $carrusel = "<article data-element='carrusel'><h3>Carrusel de Zimbabue</h3>";
-      foreach ($data["photos"]["photo"] as $foto) {
-          $titulo = $foto["title"];
-          $URLfoto = "https://live.staticflickr.com/" . $foto["server"] . "/" . $foto["id"] . "_" . $foto["secret"] . "_b.jpg";
-          $img = "<img data-element='carruselImg' alt='" . $titulo . "' src='" . $URLfoto . "' />";
-          $carrusel .= $img;
-      }
-      $carrusel .= "<button onclick='v.fotoSiguiente()' data-action='next'> > </button>
-      <button data-action='prev' onclick='v.fotoAnterior()'> < </button></article>";
-  
-      return $carrusel;
-  }
-  
+    $apiKey = '87cd7336be903190374dc6fef69b087f';
+    $flickrAPI = "https://www.flickr.com/services/rest/?method=flickr.photos.search";
 
+    $params = array(
+      'api_key' => $apiKey,
+      'tags' => $this->pais . ',' . $this->capital,
+      'format' => 'json',
+      'per_page' => 10,
+      'nojsoncallback' => '1',
+      'sort' => 'relevance',  // Ordenar por relevancia
+    );
+
+    $url = $flickrAPI . '&' . http_build_query($params);
+    $respuesta = file_get_contents($url);
+    $data = json_decode($respuesta, true);
+
+    $carrusel = "<article data-element='carrusel'><h3>Carrusel de Zimbabue</h3>";
+    foreach ($data["photos"]["photo"] as $foto) {
+      $titulo = $foto["title"];
+      $URLfoto = "https://live.staticflickr.com/" . $foto["server"] . "/" . $foto["id"] . "_" . $foto["secret"] . "_b.jpg";
+      $img = "<img data-element='carruselImg' alt='" . $titulo . "' src='" . $URLfoto . "' />";
+      $carrusel .= $img;
+    }
+    $carrusel .= "<button onclick='v.fotoSiguiente()' data-action='next'> > </button>
+      <button data-action='prev' onclick='v.fotoAnterior()'> < </button></article>";
+
+    return $carrusel;
+  }
 }
 
-// $carrusel = new Carrusel($capital, $pais);
+class Moneda
+{
+
+  public $monedaOrigen;//EUR
+  public $monedaDestino;//ZWL, Dolar zimbabuense 
+  public function __construct($monedaOrigen, $monedaDestino)
+  {
+    $this->monedaOrigen = $monedaOrigen;
+    $this->monedaDestino = $monedaDestino;
+  }
+
+  function cambioDeMoneda()
+  {
+    $key = 'bceb6a81c9022edfb7ed1aa06d69e3c3';
+    //http://apilayer.net/api/live?access_key=bceb6a81c9022edfb7ed1aa06d69e3c3&currencies=ZWL&source=EUR&format=1
+    $url = 'http://apilayer.net/api/live?access_key=' . $key . '&currencies=' . $this->monedaDestino . '&source=' . $this->monedaOrigen . '&format=1';
+    // $url ='https://api.currencystack.io/currency?base='.$this->monedaOrigen.'&target='.$this->monedaDestino;
+
+    $respuesta = file_get_contents($url);
+    $data = json_decode($respuesta, true);
+
+    // var_dump($data);
+    // Comprobamos si la decodificación JSON fue exitosa
+    if ($data) {
+      // Imprimir o utilizar elementos específicos del array
+      $cambio = $data['quotes']['EURZWL'];
+    } 
+
+    $salida = "<h3>Cambio de divisa</h3>";
+    $salida .= '<p>1 '.$this->monedaOrigen.' son '.$cambio.' '.$this->monedaDestino.'</p>';
+    return $salida;
+
+  }
+}
 ?>
 
 
@@ -107,15 +138,16 @@ class Carrusel
     <!-- meter el carrusel -->
     <?php
     $carrusel = new Carrusel('Harare', 'Zimbabue'); //Zimbabwe 
-    echo $carrusel->obtenerImagenes(); ?>
+    echo $carrusel->obtenerImagenes();
 
-    <section id="map">
-      <!-- mapa dinamico -->
-    </section>
+    //<!-- cambio de divisa -->
+    $moneda = new Moneda('EUR', 'ZWL');
+    echo $moneda->cambioDeMoneda();
+    ?>
+    
 
 
     <section>
-      <h3>Carga de archivos</h3>
       <p>Carga rutasEsquema.xml para ver su contenido: </p>
       <input type="file" accept=".xml" onchange=v.procesarXml(this.files)>
     </section>
@@ -134,6 +166,10 @@ class Carrusel
     <section>
       <p>Carga archivos SVG para representar altimetría en el documento</p>
       <input type="file" accept=".svg" onchange=v.procesarAltimetria(this.files) multiple>
+    </section>
+
+    <section id="map">
+      <!-- mapa dinamico -->
     </section>
 
   </main>
