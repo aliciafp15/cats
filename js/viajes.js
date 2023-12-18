@@ -8,7 +8,6 @@ class Viajes {
     constructor() {
         navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this), this.verErrores.bind(this));
         this.slides = document.querySelectorAll("main>article>img");//reune las imagenes dle carrusel;
-        console.log(this.slides);
     }
 
     getPosicion(posicion) {
@@ -61,12 +60,15 @@ class Viajes {
 
         var section = $("<section>").attr("data-element", "estatico");
         section.append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
-        $("main h2:first-child").after(section);//incluirlo arriba del todo, debajo del h2
-        // $("main>section").first().append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
+        // $("main h2:first-child").after(section);//incluirlo arriba del todo, debajo del h2
+        $("main").append(section);
+        // $("main > section:first-child").append(section);
+
     }
 
     getMapaDinamicoMapBox() {
-        var seccionMapaDinamico = $("main > section:nth-child(3)");
+        // quiero tener el dinamico en penultima posicion
+        var seccionMapaDinamico = $("main > section:nth-child(8)");
         seccionMapaDinamico.attr("data-element", "mapaDinamico");
 
 
@@ -101,10 +103,10 @@ class Viajes {
 
                 //recupero la seccion en la que está, y le pongo e atributo para encontrarlo después
                 //añade el contenido a su section, el cuarto elemento del main
-                var seccionPlanimetria = $("main > section:nth-child(4)");
+                var seccionPlanimetria = $("main > section:nth-child(5)");
                 seccionPlanimetria.attr("data-element", "seccionXml");
 
-                $("main > section:nth-child(4)").append(contenidoHtml);
+                $("main > section:nth-child(5)").append(contenidoHtml);
             };
 
             reader.readAsText(file);
@@ -217,7 +219,7 @@ class Viajes {
                 if (coordenadas.length > 0) {
                     this.agregarRutaAlMapa(coordenadas, i);//i=idRUta
                     //darle un tamaño
-                    var seccionKml = $("main > section:nth-child(5)").attr("data-element", "planimetria");
+                    var seccionKml = $("main > section:nth-child(6)").attr("data-element", "planimetria");
 
                 } else {
                     console.error('El archivo KML no contiene coordenadas válidas.');
@@ -337,7 +339,7 @@ class Viajes {
 
                 // lo añado a la section suya, el sexto hijo de main
                 // $("main > section:nth-child(6)").append(svg);
-                var seccionSvg = $("main > section:nth-child(6)").attr("data-element", "altimetria");
+                var seccionSvg = $("main > section:nth-child(7)").attr("data-element", "altimetria");
                 seccionSvg.append(svg);
             };
 
@@ -364,8 +366,6 @@ class Viajes {
             var trans = 100 * (indx - this.curSlide);
             $(slide).css('transform', 'translateX(' + trans + '%)')
         });
-        console.log('foto actual')
-        console.log(this.curSlide)
 
 
     }
