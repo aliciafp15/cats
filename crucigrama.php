@@ -1,3 +1,94 @@
+<?php
+class Record
+{
+  private $server;
+  private $user;
+  private $pass;
+  private $dbname;
+  public $mensaje = "";
+  public $tiempo;
+  public  $nombreP;
+  public $apellidosP;
+  public $nivel;
+
+  private $clasificacion;
+
+  public function __construct()
+  {
+    $this->server = "localhost";
+    $this->user = "DBUSER2023";
+    $this->pass = "DBPSWD2023";
+    $this->dbname = "records";
+  }
+
+
+  function conectarBD()
+  {
+    $db = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
+
+    if ($db->connect_errno) {
+      $this->mensaje = "Error de conexión: " . $db->connect_error;
+    } else {
+      $consultaPreparada = $db->prepare("INSERT INTO registro (nombre, apellidos, nivel, tiempo) VALUES (?,?,?,?);"); //consulta de creación
+      $consultaPreparada->bind_param('ssss', $this->nombreP, $this->apellidosP, $this->nivel, $this->tiempo);
+      //ejecutar sentencia
+      $consultaPreparada->execute();
+      // mostrar mensaje
+      if ($consultaPreparada->affected_rows > 0) {
+        $this->mensaje = "<p>Tiempo registrado</p>";
+      }
+      $consultaPreparada->close();
+      $db->close();
+    }
+  }
+
+
+
+  function mostrarRanking()
+  {
+    $db = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
+
+    if ($db->connect_errno) {
+      echo "Error de conexión: " . $db->connect_error;
+    } else {
+      //preparar la consulta
+      $consultaPreparada = $db->prepare("SELECT * FROM registro WHERE nivel LIKE ? ORDER BY tiempo ASC;");
+      $consultaPreparada->bind_param('s', $this->nivel);
+      $consultaPreparada->execute();
+
+      $resultado = $consultaPreparada->get_result();
+      if ($resultado->fetch_assoc() != NULL) {
+        $resultado->data_seek(0); // se posiciona al inicio del resultado de la búsqueda
+        $this->clasificacion .= "<ol>";
+        while ($fila = $resultado->fetch_assoc()) {
+          $this->clasificacion .= "<li>" . $fila['nombre'] . " " . $fila['apellidos'] . " ~ " . $fila['nivel'] . " ~ " .$fila["tiempo"]. "</li>";
+        }
+        $this->clasificacion .= "</ul>";
+      } //si no hay elementos en la base de datos, es que no se ha guardado ninguna persona en el formulario, por lo que no se muestra
+      $consultaPreparada->close();
+      $db->close();
+    }
+  }
+  function mostrarClasificacion()
+  {
+    if ($this->clasificacion != "") {
+      echo $this->clasificacion;
+    }
+  }
+}
+$registro = new Record();
+//asegura que la consulta se ejecute solo cuando se envíe el formulario
+if (count($_POST) > 0) {
+  $registro->nombreP = $_POST["nombre"];
+  $registro->apellidosP = $_POST["apellidos"];
+  $registro->nivel = $_POST["nivel"];
+  $registro->tiempo = $_POST["tiempo"];
+  //conectarse y mostrar el ranking
+  $registro->conectarBD();
+  $registro->mostrarRanking();
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -8,16 +99,14 @@
   <title>Escritorio Virtual - Crucigrama</title>
   <meta name="author" content="Alicia Fernández Pushkina" />
   <meta name="description" content="Crucigrama hecho para la seccion de juegos" />
-  <meta name="keywords"
-    content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+  <meta name="keywords" content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
   <!-- Definir la ventana gráfica -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
   <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
   <link rel="stylesheet" type="text/css" href="estilo/crucigrama.css" />
   <link href="multimedia/imagenes/favicon.ico" rel="icon" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
   <script src="js/crucigrama.js"></script>
 </head>
 
@@ -50,6 +139,8 @@
 
   <main>
     <h3>Crucigrama</h3>
+
+
   </main>
 
   <section data-type="botonera">
@@ -68,6 +159,9 @@
     <button onclick="crucigrama.introduceElement('-')">-</button>
     <button onclick="crucigrama.introduceElement('/')">/</button>
   </section>
+  <!-- codigo php para mostrar la clasificación -->
+  <?php echo $registro->mensaje ?>
+  <?php $registro->mostrarClasificacion() ?>
 
   <script>
     var crucigrama = new Crucigrama()
@@ -89,7 +183,6 @@
       }
 
     });
-
   </script>
 </body>
 
