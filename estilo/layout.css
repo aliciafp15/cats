@@ -4,10 +4,35 @@
 header {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     padding-left: 1em;
     padding-right: 1em;
+    /* gap: 2em; */
+    flex-direction: row;
+    align-items: center;
 }
 
+header > nav {
+    gap: 0.65em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+
+@media (max-width: 465px) {
+   
+
+    /*Especificidad 001*/
+    header > nav {
+        flex-direction: column; /*cambiando de flex a column en pantallas pequeñas*/
+        padding-top: 0.36em;
+        padding-bottom: 0.36em;
+    }
+
+    /*Especificidad 011*/
+    section:first-of-type {
+        flex-direction: column; /*Redefiniendo la direccion de row a column*/
+    }
+}
 
 
