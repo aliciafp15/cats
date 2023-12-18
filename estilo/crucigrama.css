@@ -26,7 +26,7 @@ main {
 h3 {
     grid-column: 1 / -1;
     text-align: center;
-  }
+}
 
 
 /*especificidad (0,1,1) */
@@ -54,7 +54,21 @@ p {
 }
 
 section[data-type=botonera] {
+    /* ocultar botonera en pantallas grandes */
     display: none;
+}
+
+/* para el formulario */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.36em;
+}
+
+form>label {
+    padding-top: 0.40em;
 }
 
 /* botonera para dispositvos moviles*/
@@ -67,12 +81,12 @@ section[data-type=botonera] {
         align-items: center;
         flex-wrap: wrap;
     }
-    
+
     section[data-type=botonera] h3 {
         width: 100%;
         text-align: center;
     }
-    
+
     section[data-type=botonera] button {
         width: calc(15% - 1em);
         height: 4em;
@@ -81,21 +95,10 @@ section[data-type=botonera] {
         color: #FFF;
     }
 
-/* para el formulario */
+    main {
+        /* ajusto el tamaño en pantallas pequeñas*/
+        width: 90vw;
+        min-height: 90vw;
+      }
+}
 
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.36em;
-    }
-
-    form > label {
-        padding-top: 0.40em;
-    }
-  
-  
-  }
-
-
- 
