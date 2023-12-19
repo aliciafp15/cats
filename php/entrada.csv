@@ -1,0 +1,25 @@
+restaurante_id,nombre,direccion,telefono
+1,Restaurante A,Dirección A,1234567890
+2,Restaurante B,Dirección B,0987654321
+categoria_id,nombre_categoria
+1,Entrantes
+2,Platos principales
+3,Postres
+elemento_id,nombre_elemento,precio,categoria_id
+1,Tabla de quesos,10.00,1
+2,Sopa de pescado,15.00,2
+3,Helado,5.00,3
+4,Pasta Alfredo,12.00,2
+5,Tarta de Chocolate,6.00,3
+6,Carpaccio de salmón,18.00,1
+7,Pizza Margherita,14.00,2
+8,Tiramisú,8.00,3
+9,Ensalada César,11.00,1
+10,Risotto de champiñones,16.00,2
+orden_id,restaurante_id,numero_mesa,fecha,importe_total
+1,1,1,2023-12-18 21:43:01,30.00
+2,2,2,2023-12-18 21:43:01,40.00
+elemento_orden_id,orden_id,elemento_id,cantidad,subtotal
+1,1,1,2,20.00
+2,1,2,1,15.00
+3,2,3,2,10.00
