@@ -17,7 +17,7 @@ class Fondo{
             // method: 'flickr.photos.search',
             "api_key": apiKey,
             // tags: 'nature',
-            "lat": this.latitud, //problema poniendo this
+            "lat": this.latitud, 
             "lon": this.longitud,
             "format": 'json',
             radius: 10,
@@ -50,5 +50,7 @@ class Fondo{
         });
 
     }
+
+    
 
 }
