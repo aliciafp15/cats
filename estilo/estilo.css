@@ -114,13 +114,15 @@ header>nav a{
 nav{
     text-align: center;
 }
-
-/*enlace al pasar el ratón por encima*/
-/* especificidad (0,1,1) */
+/* 
+ enlace al pasar el ratón por encima
+especificidad (0,1,1)
 a:hover {
-    /*background heredado de body*/
-    color: #DE026D;
+   
+    color: #DE026D; /*background heredado de body*/
+    /*  
 }
+*/
 
 
 /*tercer elemento de la lista no ordenada*/
