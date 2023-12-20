@@ -20,6 +20,7 @@ section[data-element="altimetria"] {
     display: flex;
     flex-direction: column;
     height: auto;  
+    margin-bottom: 3em;
 }
 /*especificidad (0,1,2) */
 section[data-element="altimetria"] svg {
