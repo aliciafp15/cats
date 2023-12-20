@@ -3,22 +3,26 @@
 section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     gap: 0.5em;
     padding-top: 1em;
-  }
-  
+}
 
-/*especificidad (0,0,1) */
+
 article {
     border-width: 0.063em;
     border-color: #ccc;
     border-style: solid;
     border-radius: 1em;
     padding-left: 0.8em;
-    text-align: center;
-    width: calc(25% - 2em);
+    /* text-align: center; */
+    width: 30vw;
+    /* width: calc(25% - 2em); */
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -30,6 +34,19 @@ article p {
 
 /*especificidad (0,0,2) */
 section>h3 {
-    flex: 1 100%; /*que el encabezado ocupe una fila */
-  }
-  
+    flex: 1 100%;
+    /*que el encabezado ocupe una fila */
+}
+
+
+
+@media all and (max-width: 520px) {
+
+    /*especificidad (0,0,3) */
+    main>section article {
+        font-size: 0.75em;
+        width: 70vw;    
+    }
+
+
+}
