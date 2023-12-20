@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8">
+    <title>Escritorio Virtual - Metereología</title>
+    <meta name="author" content="Alicia Fernández Pushkina">
+    <meta name="description" content="Muestra la previsión metereologica para cinco dias en Zimbabue">
+    <meta name="keywords" content="javascript, jquery, html, css, API, OpenWeatherMap">
+     <!-- Definir la ventana gráfica -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <link rel="stylesheet" type="text/css" href="estilo/metereologia.css">
+    <link href="multimedia/imagenes/favicon.ico" rel="icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+    <script src="js/pais.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- Datos con el contenidos que aparece en el navegador -->
+      <h1>Escritorio Virtual</h1>
+  
+      <nav>
+        <a accesskey="i" href="index.html" tabindex="1">Index</a>
+        <a accesskey="s" href="sobremi.html" tabindex="2">Sobre mí</a>
+        <a accesskey="n" href="noticias.html" tabindex="3">Noticias</a>
+        <a accesskey="a" href="agenda.html" tabindex="4">Agenda</a>
+        <a accesskey="m" href="metereologia.html" tabindex="5">Metereología</a>
+        <a accesskey="v" href="viajes.php" tabindex="6">Viajes</a>
+        <a accesskey="j" href="juegos.html" tabindex="7">Juegos</a>
+      </nav>
+    </header>
+    <!--<main>-->
+    <h2>Metereología</h2>
+    <script>
+      var pais = new Pais("Zimbabue", "Harare", 14438802);
+      pais.rellenarAtributos("República presidencialista"," -17.8277200",  "31.0533700", "sincretista");
+
+      document.write("<p>País: " + pais.getNombre() + "</p>");
+      document.write("<p>Capital: " + pais.getCapital() + "</p>");
+      pais.escribeCoordenadas();
+      document.write("<p>Más datos:</p>");
+      document.write(pais.getInfoSecundaria() );
+
+      pais.mirarTiempo();
+    </script><p>País: Zimbabue</p><p>Capital: Harare</p><p> -17.8277200  , 31.0533700</p><p>Más datos:</p><ul><li>Población: 14438802</li><li>República presidencialista</li><li>sincretista</li></ul>
+      
+  
+
+<section><h3>Tiempo en Harare para 5 días</h3><article>
+                        <h4>2023-12-21</h4>
+                        <p>Temp. Máxima: 26.58°C</p>
+                        <p>Temp. Mínima: 26.58°C</p>
+                        <p>Humedad: 57%</p>
+                        <p>Lluvia: 4.32 mm</p>
+                        <img src="http://openweathermap.org/img/wn/10d.png" alt="Icono del tiempo">
+                    </article><article>
+                        <h4>2023-12-22</h4>
+                        <p>Temp. Máxima: 29.59°C</p>
+                        <p>Temp. Mínima: 29.59°C</p>
+                        <p>Humedad: 30%</p>
+                        <p>Lluvia: 0 mm</p>
+                        <img src="http://openweathermap.org/img/wn/04d.png" alt="Icono del tiempo">
+                    </article><article>
+                        <h4>2023-12-23</h4>
+                        <p>Temp. Máxima: 26.73°C</p>
+                        <p>Temp. Mínima: 26.73°C</p>
+                        <p>Humedad: 45%</p>
+                        <p>Lluvia: 0 mm</p>
+                        <img src="http://openweathermap.org/img/wn/03d.png" alt="Icono del tiempo">
+                    </article><article>
+                        <h4>2023-12-24</h4>
+                        <p>Temp. Máxima: 26.61°C</p>
+                        <p>Temp. Mínima: 26.61°C</p>
+                        <p>Humedad: 47%</p>
+                        <p>Lluvia: 0.33 mm</p>
+                        <img src="http://openweathermap.org/img/wn/10d.png" alt="Icono del tiempo">
+                    </article><article>
+                        <h4>2023-12-25</h4>
+                        <p>Temp. Máxima: 26.33°C</p>
+                        <p>Temp. Mínima: 26.33°C</p>
+                        <p>Humedad: 47%</p>
+                        <p>Lluvia: 0 mm</p>
+                        <img src="http://openweathermap.org/img/wn/04d.png" alt="Icono del tiempo">
+                    </article></section></body></html>
