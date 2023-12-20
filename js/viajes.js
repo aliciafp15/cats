@@ -19,8 +19,6 @@ class Viajes {
         this.precisionAltitud = posicion.coords.altitudeAccuracy;
         this.rumbo = posicion.coords.heading;
         this.velocidad = posicion.coords.speed;
-        // this.getMapaEstaticoGoogle();
-        // this.initMap();
         this.getMapaEstaticoMapBox();
         this.getMapaDinamicoMapBox();
 
@@ -50,7 +48,7 @@ class Viajes {
         var url = "https://api.mapbox.com/styles/v1/mapbox/light-v11/static/"
         var centro = this.longitud + ',' + this.latitud + ','
         var zoom = "14"
-        var tam = "/350x200"
+        var tam = "/300x200" //reducido el ancho de la imagen al minimo
 
         // Agregar el marcador a las coordenadas de tu posición
         var marcador = "pin-s-l+000(" + this.longitud + "," + this.latitud + ")/";
@@ -58,18 +56,20 @@ class Viajes {
         // this.imagenMapa = url + centro + zoom + tam + apiKey;
         this.imagenMapa = url + marcador + centro + zoom + tam + apiKey;//con chincheta
 
-        var section = $("<section>").attr("data-element", "estatico");
-        section.append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
+        // var section = $("<section>").attr("data-element", "estatico");
+        // section.html('<h3>Tu ubicación actual</h3>');
+        var seccionEstatico = $("main>section[data-element='estatico']");
+        seccionEstatico.append("<img src='" + this.imagenMapa + "' alt='mapa estático mapbox' />");
         // $("main h2:first-child").after(section);//incluirlo arriba del todo, debajo del h2
-        $("main").append(section);
+        $("main").append(seccionEstatico);
         // $("main > section:first-child").append(section);
 
     }
 
     getMapaDinamicoMapBox() {
         // quiero tener el dinamico en penultima posicion
-        var seccionMapaDinamico = $("main > section:nth-child(8)");
-        seccionMapaDinamico.attr("data-element", "mapaDinamico");
+        // var seccionMapaDinamico = $("main > section:nth-child(8)");
+        // seccionMapaDinamico.attr("data-element", "mapaDinamico");
 
 
 
@@ -100,13 +100,9 @@ class Viajes {
             reader.onload = (e) => {
                 const contenidoXml = e.target.result;
                 const contenidoHtml = this.parsearXmlAHtml(contenidoXml);
+                $("main>section[data-element='seccionXML']").append(contenidoHtml);
 
-                //recupero la seccion en la que está, y le pongo e atributo para encontrarlo después
-                //añade el contenido a su section, el cuarto elemento del main
-                var seccionPlanimetria = $("main > section:nth-child(5)");
-                seccionPlanimetria.attr("data-element", "seccionXml");
-
-                $("main > section:nth-child(5)").append(contenidoHtml);
+                
             };
 
             reader.readAsText(file);
@@ -122,7 +118,8 @@ class Viajes {
 
         $xml.find("ruta").each((index, ruta) => {
             const nombreRuta = $(ruta).attr("nombreRuta");
-            html += `<h3>${nombreRuta}</h3>`;
+            html += `<article>`;
+            html += `<h4>${nombreRuta}</h4>`;
 
             const datos = $(ruta).find("datos");
             const tipoRuta = datos.find("tipoRuta").text();
@@ -179,10 +176,19 @@ class Viajes {
                         </picture>`
 
                     }
-                    //
+                    //videos
+                    const nombreVideo = $(hito).find("videos").text(); //cascadas.mp4
+                    if (nombreVideo.trim() !== "") {//si hay videos
+                        var nombreTratado = nombreVideo.trim().split('.')[0];// me quedo solo con el nombre sin extension
+                        var fotoHtml = `<video controls preload="auto">
+                        <source src="multimedia/videos/${nombreTratado}.mp4"  type="video/mp4" />
+                        <source src="multimedia/videos/${nombreTratado}.webm"  type="video/webm" />
+                        </video>`
+
+                    }
 
                     html += `
-                <h4>${nombreHito}</h4>
+                <h5>${nombreHito}</h5>
                 <p>${descripcionHito}</p>
                 <p>Coordenadas del Hito: (${latitudHito}, ${longitudHito})</p>
                 <p>Altitud: ${altitud} m</p>
@@ -190,6 +196,8 @@ class Viajes {
                 <p>${fotoHtml}</p>
               `;
                 });
+
+                html += `</article>`;
 
 
 
@@ -217,9 +225,12 @@ class Viajes {
                 const coordenadas = this.parsearKML(contenidoKML);
 
                 if (coordenadas.length > 0) {
-                    this.agregarRutaAlMapa(coordenadas, i);//i=idRUta
-                    //darle un tamaño
-                    var seccionKml = $("main > section:nth-child(6)").attr("data-element", "planimetria");
+                    this.agregarRutaAlMapa(coordenadas, i);//i=idRUta, le mete el mapa dinamico
+                    // //darle un tamaño
+                    // var seccionKml = $("main > section:nth-child(6)").attr("data-element", "planimetria");
+                    var seccionPlanimetria =  $("main>section[data-element='planimetria']");
+                    var primerHijoSection = seccionPlanimetria.children("section:first");
+                    primerHijoSection.attr("data-element", "mapaPlanimetria");
 
                 } else {
                     console.error('El archivo KML no contiene coordenadas válidas.');
@@ -324,13 +335,14 @@ class Viajes {
     }
 
 
-    // representar la informacion de perfil1.svg, perfil2.svg y perfil3.svg en un mapa dinamico
+    // representar la informacion de perfil1.svg, perfil2.svg y perfil3.svg 
     procesarAltimetria(files) {
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
             const reader = new FileReader();
-            var section = $("<section>").attr("data-element", "altimetria");
+            // var section = $("<section>").attr("data-element", "altimetria");
+            // var sectionAltimetria $("main>section[data-element='altimetria']")
             reader.onload = (e) => {
                 let xml = $.parseXML(reader.result);
                 //version al svg para el validador
@@ -339,8 +351,9 @@ class Viajes {
 
                 // lo añado a la section suya, el sexto hijo de main
                 // $("main > section:nth-child(6)").append(svg);
-                var seccionSvg = $("main > section:nth-child(7)").attr("data-element", "altimetria");
-                seccionSvg.append(svg);
+                $("main>section[data-element='altimetria']").append(svg);
+                // var seccionSvg = $("main > section:nth-child(7)").attr("data-element", "altimetria");
+                // seccionSvg.append(svg);
             };
 
             reader.readAsText(file);
