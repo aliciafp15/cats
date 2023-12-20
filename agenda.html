@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-
-<html lang="es">
-
-<head>
+<html lang="es"><head>
   <!-- Datos que describen el documento -->
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Escritorio Virtual - Agenda</title>
-  <meta name="author" content="Alicia Fernández Pushkina" />
-  <meta name="description" content="aquí cada documento debe tener la  descripción del contenido concreto del mismo" />
-  <meta name="keywords"
-    content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+  <meta name="author" content="Alicia Fernández Pushkina">
+  <meta name="description" content="Muestra las carreras actuales para la Formula1">
+  <meta name="keywords" content="F1, carreras, javascript, api, jquery">
   <!-- Definir la ventana gráfica -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-  <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-  <link rel="stylesheet" type="text/css" href="estilo/agenda.css" />
-  <link href="multimedia/imagenes/favicon.ico" rel="icon" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+  <link rel="stylesheet" type="text/css" href="estilo/agenda.css">
+  <link href="multimedia/imagenes/favicon.ico" rel="icon">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
   <script src="js/agenda.js"></script>
 </head>
 
@@ -39,13 +34,13 @@
 
   <main>
     <h2>Agenda</h2>
-    <button onclick=agenda.verCarreras()>Ver XML carreras</button>
-  </main>
-  
+    <button onclick="agenda.verCarreras()">Ver XML carreras</button>
+  <section><article><h3>Bahrain Grand Prix</h3><p>Bahrain International Circuit</p><p>(26.0325,50.5106)</p><p>2023-03-05, 15:00</p></article><article><h3>Saudi Arabian Grand Prix</h3><p>Jeddah Corniche Circuit</p><p>(21.6319,39.1044)</p><p>2023-03-19, 17:00</p></article><article><h3>Australian Grand Prix</h3><p>Albert Park Grand Prix Circuit</p><p>(-37.8497,144.968)</p><p>2023-04-02, 05:00</p></article><article><h3>Azerbaijan Grand Prix</h3><p>Baku City Circuit</p><p>(40.3725,49.8533)</p><p>2023-04-30, 11:00</p></article><article><h3>Miami Grand Prix</h3><p>Miami International Autodrome</p><p>(25.9581,-80.2389)</p><p>2023-05-07, 19:30</p></article><article><h3>Monaco Grand Prix</h3><p>Circuit de Monaco</p><p>(43.7347,7.42056)</p><p>2023-05-28, 13:00</p></article><article><h3>Spanish Grand Prix</h3><p>Circuit de Barcelona-Catalunya</p><p>(41.57,2.26111)</p><p>2023-06-04, 13:00</p></article><article><h3>Canadian Grand Prix</h3><p>Circuit Gilles Villeneuve</p><p>(45.5,-73.5228)</p><p>2023-06-18, 18:00</p></article><article><h3>Austrian Grand Prix</h3><p>Red Bull Ring</p><p>(47.2197,14.7647)</p><p>2023-07-02, 13:00</p></article><article><h3>British Grand Prix</h3><p>Silverstone Circuit</p><p>(52.0786,-1.01694)</p><p>2023-07-09, 14:00</p></article><article><h3>Hungarian Grand Prix</h3><p>Hungaroring</p><p>(47.5789,19.2486)</p><p>2023-07-23, 13:00</p></article><article><h3>Belgian Grand Prix</h3><p>Circuit de Spa-Francorchamps</p><p>(50.4372,5.97139)</p><p>2023-07-30, 13:00</p></article><article><h3>Dutch Grand Prix</h3><p>Circuit Park Zandvoort</p><p>(52.3888,4.54092)</p><p>2023-08-27, 13:00</p></article><article><h3>Italian Grand Prix</h3><p>Autodromo Nazionale di Monza</p><p>(45.6156,9.28111)</p><p>2023-09-03, 13:00</p></article><article><h3>Singapore Grand Prix</h3><p>Marina Bay Street Circuit</p><p>(1.2914,103.864)</p><p>2023-09-17, 12:00</p></article><article><h3>Japanese Grand Prix</h3><p>Suzuka Circuit</p><p>(34.8431,136.541)</p><p>2023-09-24, 05:00</p></article><article><h3>Qatar Grand Prix</h3><p>Losail International Circuit</p><p>(25.49,51.4542)</p><p>2023-10-08, 17:00</p></article><article><h3>United States Grand Prix</h3><p>Circuit of the Americas</p><p>(30.1328,-97.6411)</p><p>2023-10-22, 19:00</p></article><article><h3>Mexico City Grand Prix</h3><p>Autódromo Hermanos Rodríguez</p><p>(19.4042,-99.0907)</p><p>2023-10-29, 20:00</p></article><article><h3>São Paulo Grand Prix</h3><p>Autódromo José Carlos Pace</p><p>(-23.7036,-46.6997)</p><p>2023-11-05, 17:00</p></article><article><h3>Las Vegas Grand Prix</h3><p>Las Vegas Strip Street Circuit</p><p>(36.1147,-115.173)</p><p>2023-11-19, 06:00</p></article><article><h3>Abu Dhabi Grand Prix</h3><p>Yas Marina Circuit</p><p>(24.4672,54.6031)</p><p>2023-11-26, 13:00</p></article></section></main>
+
   <script>
     var agenda = new Agenda()
   </script>
-</body>
 
 
-</html>
+
+</body></html>
