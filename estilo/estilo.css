@@ -129,8 +129,8 @@ video {
     max-width: 80%;
     height: auto;
 }
-
-img{
+/*especificidad (0,0,2) */
+mai > img{
     max-width: 80%;
     height: auto;
 }
