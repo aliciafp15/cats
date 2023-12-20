@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="es">
-
-<head>
-  <!-- Datos que describen el documento -->
-  <meta charset="UTF-8" />
-  <title>Escritorio Virtual - API</title>
-  <meta name="author" content="Alicia Fernández Pushkina" />
-  <meta name="description" content="cambiar titulo" />
-  <meta name="keywords"
-    content="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
-  <!-- Definir la ventana gráfica -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-  <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-  <link rel="stylesheet" type="text/css" href="estilo/api.css" />
-  <link href="multimedia/imagenes/favicon.ico" rel="icon" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <title>Escritorio Virtual - Reproductor de música</title>
+  <meta name="author" content="Alicia Fernández Pushkina">
+  <meta name="description" content="Visualizador de música con APIS">
+  <meta name="keywords" content="HTML5, api, API File, API Web Audio, API Web Storage, jquery, javascript, html ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+  <link rel="stylesheet" type="text/css" href="estilo/api.css">
+  <link href="multimedia/imagenes/favicon.ico" rel="icon">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
   <script src="js/api.js"></script>
 </head>
 
 <body>
   <header>
-    <!-- Datos con el contenidos que aparece en el navegador -->
     <h1>Escritorio Virtual</h1>
 
     <nav>
@@ -50,8 +43,8 @@
   </section>
   <main>
     <label for="subirAudio">Elige una canción de multimedia:</label>
-    <input id="subirAudio" type="file" onchange=reproductor.cargarCancion(this.files) accept=".mp3,.wav" >
-  </main>
+    <input id="subirAudio" type="file" onchange="reproductor.cargarCancion(this.files)" accept=".mp3,.wav">
+  <audio controls="" src="multimedia/audios/funday.mp3"></audio><canvas></canvas></main>
 
   <script>
       var reproductor = new Reproductor(); 
@@ -59,7 +52,7 @@
 
 
   
-</body>
 
 
-</html>
+
+</body></html>
