@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es"><head>
+  <!-- Datos que describen el documento -->
+  <meta charset="UTF-8">
+  <title>Escritorio Virtual - Memoria</title>
+  <meta name="author" content="Alicia Fernández Pushkina">
+  <meta name="description" content="Juego de memoria con cartas para la práctica de javascript">
+  <meta name="keywords" content="javascript, memoria, cartas, juego, html, css">
+  <!-- Definir la ventana gráfica -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+  <link rel="stylesheet" type="text/css" href="estilo/memoria.css">
+  <link href="multimedia/imagenes/favicon.ico" rel="icon">
+  <script src="js/memoria.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <h1>Escritorio Virtual</h1>
+
+    <nav>
+      <a accesskey="i" href="index.html" tabindex="1">Index</a>
+      <a accesskey="s" href="sobremi.html" tabindex="2">Sobre mí</a>
+      <a accesskey="n" href="noticias.html" tabindex="3">Noticias</a>
+      <a accesskey="a" href="agenda.html" tabindex="4">Agenda</a>
+      <a accesskey="m" href="metereologia.html" tabindex="5">Metereología</a>
+      <a accesskey="v" href="viajes.php" tabindex="6">Viajes</a>
+      <a accesskey="j" href="juegos.html" tabindex="7">Juegos</a>
+    </nav>
+  </header>
+
+  <!--menu de juegos-->
+  <section>
+    <h2>Juegos</h2>
+    <nav>
+      <a href="memoria.html" accesskey="e" tabindex="8">Memoria</a>
+      <a href="sudoku.html" accesskey="d" tabindex="9">Sudoku</a>
+      <a href="crucigrama.php" accesskey="c" tabindex="10">Crucigrama</a>
+      <a href="api.html" accesskey="p" tabindex="11">Reproductor de música</a>
+      <a href="php/restaurante.php" accesskey="r" tabindex="12">Restaurante</a>
+    </nav>
+  </section>
+
+
+  <main>
+    <section>
+      <h3>Juego De Memoria</h3>
+
+    <article data-element="carta4_a"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="carta4_a"></article><article data-element="carta2_a"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="carta2_a"></article><article data-element="carta5_b"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg" alt="carta5_b"></article><article data-element="carta6_a"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg" alt="carta6_a"></article><article data-element="carta3_a"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg" alt="carta3_a"></article><article data-element="carta6_b"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg" alt="carta6_b"></article><article data-element="carta3_b"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg" alt="carta3_b"></article><article data-element="carta2_b"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="carta2_b"></article><article data-element="carta4_b"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="carta4_b"></article><article data-element="carta1_b"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="carta1_b"></article><article data-element="carta5_a"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg" alt="carta5_a"></article><article data-element="carta1_a"><h3>Tarjeta de memoria</h3><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="carta1_a"></article></section>
+  </main>
+
+  <script>
+    var juego = new Memoria();
+  </script>
+
+
+
+
+
+</body></html>
