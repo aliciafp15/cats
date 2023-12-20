@@ -48,7 +48,7 @@ class Viajes {
         var url = "https://api.mapbox.com/styles/v1/mapbox/light-v11/static/"
         var centro = this.longitud + ',' + this.latitud + ','
         var zoom = "14"
-        var tam = "/300x200" //reducido el ancho de la imagen al minimo
+        var tam = "/350x200" //reducido el ancho de la imagen al minimo
 
         // Agregar el marcador a las coordenadas de tu posición
         var marcador = "pin-s-l+000(" + this.longitud + "," + this.latitud + ")/";
@@ -226,8 +226,7 @@ class Viajes {
 
                 if (coordenadas.length > 0) {
                     this.agregarRutaAlMapa(coordenadas, i);//i=idRUta, le mete el mapa dinamico
-                    // //darle un tamaño
-                    // var seccionKml = $("main > section:nth-child(6)").attr("data-element", "planimetria");
+                    //NOTA: el mapa de planimetria a veces no se carga completamente, pero si voy al inspector y alterno de movil a ordenador, se carga
                     var seccionPlanimetria =  $("main>section[data-element='planimetria']");
                     var primerHijoSection = seccionPlanimetria.children("section:first");
                     primerHijoSection.attr("data-element", "mapaPlanimetria");
