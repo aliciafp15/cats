@@ -41,7 +41,7 @@ class Agenda{
 
                 const section = $('<section>');
                
-
+                section.html('<h3>Carreras</h3>');;
                 $(data).find('Race').each((index, race) => {  
                     var raceName = $(race).find('RaceName').text();
                     var circuitName = $(race).find('CircuitName').text();
@@ -54,7 +54,7 @@ class Agenda{
                     var long = $(race).find('Location').attr('long'); // Selecciona la longitud
 
                     const article = $('<article>');
-                    article.html('<h3>' + raceName + "</h3><p>" + circuitName + "</p><p>(" + lat + ',' + long 
+                    article.html('<h4>' + raceName + "</h4><p>" + circuitName + "</p><p>(" + lat + ',' + long 
                         +  ")</p><p>" + date +   ", " + horaBonita + "</p>");
                     section.append(article);
                 });
