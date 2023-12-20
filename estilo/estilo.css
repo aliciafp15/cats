@@ -34,14 +34,11 @@ header {
 /*especificidad (0,0,1) */
 h2 {
     /*centra el título*/
-    text-align: center;
+    /* text-align: center; */
+     /* background-color heredado de body*/
+     color: #DE026D;
 }
 
-/*especificidad (0,0,1) */
-h2{
-    /* background-color heredado de body*/
-    color: #DE026D;
-}
 
 /*especificidad (0,0,1) */
 table {
@@ -113,17 +110,18 @@ header>nav a{
 
 }
 
+/*especificidad (0,0,1) */
 nav{
     text-align: center;
 }
 
 /*enlace al pasar el ratón por encima*/
-/*especificidad (0,1,1)
+/* especificidad (0,1,1) */
 a:hover {
     /*background heredado de body*/
-    /*color: #53199F;
+    color: #DE026D;
 }
-*/
+
 
 /*tercer elemento de la lista no ordenada*/
 /*especificidad (0,1,2) */

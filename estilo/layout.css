@@ -10,7 +10,7 @@ header {
     flex-direction: row;
     align-items: center;
 }
-
+/*especificidad (0,0,2) */
 header > nav {
     gap: 0.65em;
     display: flex;
@@ -20,6 +20,7 @@ header > nav {
 }
 
 /* menu de juegos */
+/*especificidad (0,0,1) */
 nav {
     /* text-align: center; */
     display: flex;
@@ -29,12 +30,14 @@ nav {
     justify-content: center;
     gap: 0.5em;
 }
+
 @media (max-width: 465px) {
    
 
-    /*Especificidad 001*/
-    header > nav {
-        flex-direction: column; /*cambiando de flex a column en pantallas pequeñas*/
+    /*especificidad (0,0,2) */
+        header > nav {
+            /* Redefinición de flex-direction: para pantallas pequeñas */
+        flex-direction: column; 
         padding-top: 0.36em;
         padding-bottom: 0.36em;
     }

@@ -1,21 +1,28 @@
+/*datos personales Alicia Fernández Pushkina y UO275727*/
 
+
+
+/*especificidad (0,1,1) */
 section[data-element="mapaDinamico"]{
     /* ajusta el segundo section del main, elm mapa dinámico de la pos actual */
     height: 35vh;
  }
 
+
+
+/*especificidad (0,0,2) */
  section[data-element="planimetria"]> section{
     /* ajusta la seccion del mapa dinamico de planimetria */
     height: 35vh;
 }
 
-
+/*especificidad (0,1,1) */
 section[data-element="altimetria"] {
     display: flex;
     flex-direction: column;
     height: auto;  
 }
-
+/*especificidad (0,1,2) */
 section[data-element="altimetria"] svg {
     max-height: 100vh; /* Limita la altura al 100% del viewport height */
 }

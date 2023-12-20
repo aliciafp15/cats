@@ -1,11 +1,14 @@
+/*datos personales Alicia Fernández Pushkina y UO275727*/
+/*especificidad (0,0,1) */
 canvas{
     width: 90%;
     height: 6.25em;
+    /*color heredadp de body */
     background-color: #e8dbf9;
     border-radius: 2em;
 }
 
-
+/*especificidad (0,0,1) */
 main {
     display: flex;
     flex-direction: column;

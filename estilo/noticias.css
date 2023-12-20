@@ -52,7 +52,7 @@ main > section > button {
     place-self: center; 
 } */
 
-
+/*especificidad (0,0,2) */
 main > section {
     display: flex;
     align-items: center;
@@ -60,23 +60,23 @@ main > section {
     justify-content: space-evenly;
     flex-direction: row;
 }
-
+/*especificidad (0,0,3) */
 main > section > p {
     display: flex;
     gap: 1em;
     flex-direction: column;
 }
-
+/*especificidad (0,0,3) */
 main > section > button {
     margin-top: 1em; /* Espacio entre la línea de campos y el botón */
 }
-
+/*especificidad (0,0,3) */
 main > section > h3, main > section > button {
     display: flex;
     width: 100%;
     justify-content: center;
 }
-
+/*especificidad (0,0,3) */
 main > section > article {
     display: flex; /* Mostrar los articles en la misma fila */
     gap: 1em; /* Espacio entre articles */

@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0.3125em;
 }
-
+/*especificidad (0,0,1) */
 main {
   display: flex;
   align-items: center;
@@ -23,20 +23,12 @@ main > section {
   flex-wrap: wrap;
   justify-content: center;
 }
-
+/*especificidad (0,0,3) */
 main section>h3 {
   text-align: center;
   margin-top: 0;
   flex: 1 100%; /*que el encabezado ocupe una fila */
 }
-/*especificidad (0,0,2) 
-section h3 {
-  flex-basis: 100%;
-  /* El h2 ocupa el ancho completo de la fila */
-  /*text-align: center; mejor usar las propiedades del modulo*/
-
-
-
 
 /*-------------cartas------------- */
 
@@ -69,10 +61,8 @@ article img {
   height: 100%;
   position: absolute;
   border-radius: 0.3125em;
-  /* color heredado de h3 en estilo.css*/
   color: #E8DBF9;
   background: #53199F;
-
   backface-visibility: hidden;
 }
 

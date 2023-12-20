@@ -1,14 +1,5 @@
 /*datos personales Alicia Fernández Pushkina y UO275727*/
 
-/*especificidad (0,0,1) */
-/* body {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
-
-} */
 
 /*especificidad (0,0,1) */
 main {
@@ -53,13 +44,14 @@ p {
     justify-content: center;
 }
 
+/*especificidad (0,1,1) */
 section[data-type=botonera] {
     /* ocultar botonera en pantallas grandes */
     display: none;
 }
 
 /* para el formulario */
-
+/*especificidad (0,0,1) */
 form {
     display: flex;
     flex-direction: column;
@@ -67,6 +59,7 @@ form {
     gap: 0.36em;
 }
 
+/*especificidad (0,0,2) */
 form>label {
     padding-top: 0.40em;
 }
@@ -74,6 +67,7 @@ form>label {
 /* botonera para dispositvos moviles*/
 @media all and (max-width: 1024px) {
 
+    /*especificidad (0,1,1) */
     section[data-type=botonera] {
         display: flex;
         gap: 1em;
@@ -82,11 +76,13 @@ form>label {
         flex-wrap: wrap;
     }
 
+    /*especificidad (0,1,2) */
     section[data-type=botonera] h3 {
         width: 100%;
         text-align: center;
     }
 
+    /*especificidad (0,1,2) */
     section[data-type=botonera] button {
         width: calc(15% - 1em);
         height: 4em;
@@ -95,10 +91,10 @@ form>label {
         color: #FFF;
     }
 
+    /*especificidad (0,0,1) */
     main {
         /* ajusto el tamaño en pantallas pequeñas*/
         width: 90vw;
         min-height: 90vw;
-      }
+    }
 }
-

@@ -1,3 +1,6 @@
+/*datos personales Alicia Fernández Pushkina y UO275727*/
+
+/*especificidad (0,1,1) */
 article[data-element="carrusel"] {
     width: 100%;
     max-width: 100vh;
@@ -6,10 +9,12 @@ article[data-element="carrusel"] {
     overflow: hidden; 
     border-radius: 2em;
   }
+  /*especificidad (0,1,2) */
   article[data-element="carrusel"] h3 {
       width: 100%;
       text-align: center;
   }
+  /*especificidad (0,1,2) */
   article[data-element="carrusel"] img {
     width: 100%;
     max-width: 100vh;
@@ -19,7 +24,7 @@ article[data-element="carrusel"] {
     object-fit: cover;
     border-radius: 2em;
   }
-
+  /*especificidad (0,1,2) */
   article[data-element="carrusel"] button {
     position: absolute;
     width: 2em;
@@ -29,19 +34,21 @@ article[data-element="carrusel"] {
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;
-    background-color: #fff; /*Color heredado de boy*/
+    /* color heredado de boy */
+    background-color: #fff;
   }
 
-
+  /*especificidad (0,2,2) */
   article[data-element="carrusel"] button:active {
     transform: scale(1.1);
   }
-  
+
+   /*especificidad (0,2,2) */
   article[data-element="carrusel"] button[data-action=prev] {
     top: 50%;
     left: 2%;
   }
-  
+   /*especificidad (0,2,2) */
   article[data-element="carrusel"] button[data-action=next] {
     top: 50%;
     right: 2%;

@@ -27,4 +27,9 @@ article p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+
+/*especificidad (0,0,2) */
+section>h3 {
+    flex: 1 100%; /*que el encabezado ocupe una fila */
+  }
   

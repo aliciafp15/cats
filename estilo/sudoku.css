@@ -20,8 +20,7 @@ p[data-state="clicked"] {
 }
 
 
-
-
+/*especificidad (0,0,1) */
 p {
   margin: 0;
   border-style: solid;
@@ -35,42 +34,44 @@ p {
 /*especificidad (0,1,1) */
 p[data-state="blocked"] {
   font-weight: bold;
+  /* color heredado de body */
   background-color: #f2eef8;
 }
 
 /*especificidad (0,0,2) */
-main > h3 {
+main>h3 {
   grid-column: 1 / -1;
   text-align: center;
 }
 
 /* ----------inicio lineas 3x3 marcadas ------------- */
-
-main  p:nth-child(3n + 4) { 
+/*especificidad (0,1,2 */
+main p:nth-child(3n + 4) {
   border-right: 0.14em solid #000000;
 }
-/*Especificidad 033, 033, 023*/
-main  p:nth-child(n + 20):nth-child(-n + 28), 
-main  p:nth-child(n + 47):nth-child(-n + 55),
-main  p:nth-last-child(-n + 9) {
+
+/*especificidad (0,2,2) */
+/*especificidad (0,2,2) */
+/*especificidad (0,1,2) */
+main p:nth-child(n + 20):nth-child(-n + 28),
+main p:nth-child(n + 47):nth-child(-n + 55),
+main p:nth-last-child(-n + 9) {
   border-bottom: 0.14em solid #000000;
 }
 
-/*Especificidad 023*/
-main  p:nth-child(9n + 2) { 
+/*especificidad (0,1,2) */
+main p:nth-child(9n + 2) {
   border-left: 0.14em solid #000000;
 }
-/*Especificidad 023*/
-main  p:nth-child(-n+10) {
+
+/*especificidad (0,1,2) */
+main p:nth-child(-n+10) {
   border-top: 0.14em solid #000000;
 }
 
 /* ---------fin lineas 3x3 marcadas ------------- */
 
-
-
-
-
+/*especificidad (0,1,2) */
 section[data-type=botonera] {
   display: none;
 }
@@ -78,31 +79,36 @@ section[data-type=botonera] {
 /* botonera para dispositvos moviles*/
 @media all and (max-width: 1024px) {
 
+  /*especificidad (0,1,1) */
   section[data-type=botonera] {
-      display: flex;
-      gap: 1em;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-  }
-  
-  section[data-type=botonera] h3 {
-      width: 100%;
-      text-align: center;
-  }
-  
-  section[data-type=botonera] button {
-      width: calc(15% - 1em);
-      height: 4em;
-      text-align: center;
-      background-color: #000;
-      color: #FFF;
+    /* redefinición de display para hacerla visible*/
+    display: flex; 
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-/*  */
+  /*especificidad (0,1,2) */
+  section[data-type=botonera] h3 {
+    width: 100%;
+    text-align: center;
+  }
+
+  /*especificidad (0,1,2) */
+  section[data-type=botonera] button {
+    width: calc(15% - 1em);
+    height: 4em;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+  }
+
+  /*especificidad (0,0,1) */
   main {
-    /* ajusto el tamaño en pantallas pequeñas*/
+    /* redefinición para ajustar el tamaño en pantallas pequeñas*/
     width: 90vw;
+     /* redefinición para ajustar el tamaño en pantallas pequeñas*/
     min-height: 90vw;
   }
 
