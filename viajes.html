@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="es"><head>
+<html lang="es">
+<head>
   <!-- Datos que describen el documento -->
   <meta charset="UTF-8">
   <title>Escritorio Virtual - Viajes</title>
@@ -50,8 +51,8 @@
   <main>
     <h2>Viajes</h2>
     <!-- meter el carrusel -->
-    <article data-element="carrusel"><h3>Carrusel de Zimbabue</h3><img data-element="carruselImg" alt="Zimbabwe" src="https://live.staticflickr.com/3882/14788662471_f78ab8626d_b.jpg"><img data-element="carruselImg" alt="Worms here" src="https://live.staticflickr.com/6106/6312009002_453caa65f6_b.jpg"><img data-element="carruselImg" alt="Dental Clinic at Newlands Clinic Simbabwe_Credits RLF Patrick Rohr" src="https://live.staticflickr.com/65535/52579824710_c865497d3d_b.jpg"><img data-element="carruselImg" alt="Jacob Mafuleni founder of the project" src="https://live.staticflickr.com/65535/51111419677_b619843151_b.jpg"><img data-element="carruselImg" alt="_MG_4569.jpg" src="https://live.staticflickr.com/65535/50582031128_291c1e9dc1_b.jpg"><img data-element="carruselImg" alt="_MG_2864.jpg" src="https://live.staticflickr.com/65535/50582863742_05fd203b29_b.jpg"><img data-element="carruselImg" alt="_MG_2297.jpg" src="https://live.staticflickr.com/65535/50582851172_9dca7bdf15_b.jpg"><img data-element="carruselImg" alt="Zimbabwe tells Robert Mugabe to go! Solidarity March, 18 Nov 2017" src="https://live.staticflickr.com/822/27162982418_3b109cd84e_b.jpg"><img data-element="carruselImg" alt="Zimbabwe tells Robert Mugabe to go! Solidarity March, 18 Nov 2017" src="https://live.staticflickr.com/802/40284067544_e22fd554f8_b.jpg"><img data-element="carruselImg" alt="Zimbabwe tells Robert Mugabe to go! Solidarity March, 18 Nov 2017" src="https://live.staticflickr.com/802/26122299487_e39056d4c9_b.jpg"><button onclick="v.fotoSiguiente()" data-action="next"> &gt; </button>
-      <button data-action="prev" onclick="v.fotoAnterior()"> &lt; </button></article><h3>Cambio de divisa</h3><p>1 EUR son 352.648167 ZWL</p>
+    <article data-element="carrusel"><h3>Carrusel de Zimbabue</h3><img data-element="carruselImg" alt="Zimbabwe" src="https://live.staticflickr.com/3882/14788662471_f78ab8626d_b.jpg"><img data-element="carruselImg" alt="Worms here" src="https://live.staticflickr.com/6106/6312009002_453caa65f6_b.jpg"><img data-element="carruselImg" alt="Dental Clinic at Newlands Clinic Simbabwe_Credits RLF Patrick Rohr" src="https://live.staticflickr.com/65535/52579824710_c865497d3d_b.jpg"><img data-element="carruselImg" alt="Jacob Mafuleni founder of the project" src="https://live.staticflickr.com/65535/51111419677_b619843151_b.jpg"><img data-element="carruselImg" alt="_MG_4569.jpg" src="https://live.staticflickr.com/65535/50582031128_291c1e9dc1_b.jpg"><img data-element="carruselImg" alt="_MG_2864.jpg" src="https://live.staticflickr.com/65535/50582863742_05fd203b29_b.jpg"><img data-element="carruselImg" alt="_MG_2297.jpg" src="https://live.staticflickr.com/65535/50582851172_9dca7bdf15_b.jpg"><img data-element="carruselImg" alt="Zimbabwe tells Robert Mugabe to go! Solidarity March, 18 Nov 2017" src="https://live.staticflickr.com/822/40992596112_f87fcbc470_b.jpg"><img data-element="carruselImg" alt="Zimbabwe tells Robert Mugabe to go! Solidarity March, 18 Nov 2017" src="https://live.staticflickr.com/822/27162982418_3b109cd84e_b.jpg"><img data-element="carruselImg" alt="Zimbabwe tells Robert Mugabe to go! Solidarity March, 18 Nov 2017" src="https://live.staticflickr.com/4775/40993182161_f735c4b192_b.jpg"><button onclick="v.fotoSiguiente()" data-action="next"> &gt; </button>
+      <button data-action="prev" onclick="v.fotoAnterior()"> &lt; </button></article><h3>Cambio de divisa</h3><p>1 EUR son 352.927706 ZWL</p>
 
 
     <section data-element="seccionXML">
@@ -231,10 +232,10 @@
       <label for="kml">Archivos KML:</label>
       <input id="kml" type="file" accept=".kml" onchange="v.procesarPlanimetria(this.files)" multiple="">
 
-      <section id="mapPlanimetria">
+      <section id="mapPlanimetria" class="mapboxgl-map" data-element="mapaPlanimetria">
         <h4>Planimetria</h4> <!--Al poner el mapa quedará oculto, pero lo tengo por el validador-->
         <!-- mapa dinamico para la planimetria -->
-      </section>
+      <div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="1275" height="339" style="width: 1275px; height: 338.094px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><button class="mapboxgl-ctrl-attrib-button" type="button" aria-label="Toggle attribution"><span class="mapboxgl-ctrl-icon" aria-hidden="true" title="Toggle attribution"></span></button><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=mapbox&amp;id=streets-v12&amp;access_token=pk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbGdzMnZweWowZWEyM2NvYWZkODMxZXpoIn0.ghWod73o3jm9F1lPOhfsjw#/31.229/-17.126/5.3" target="_blank" aria-label="Map feedback" rel="noopener nofollow">Improve this map</a></div></div></div></div></section>
     </section>
 
 
@@ -243,20 +244,54 @@
       <p>Carga archivos SVG para representar altimetría en el documento</p>
       <label for="svg">Archivos SVG:</label>
       <input id="svg" type="file" accept=".svg" onchange="v.procesarAltimetria(this.files)" multiple="">
-    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1600 7200 2100" version="1.1">
+<polyline points="10,-10 1410.0,-1450 3790.0,-1400 7130.0,-1600 7130.0,-10 10,-10" style="fill:white;stroke:red;stroke-width:4"></polyline>
+<text x="1410.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Chipangali Wildlife Orphanage
+</text>
+<text x="3790.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Hillside Dams
+</text>
+<text x="7130.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Matobo National Park
+</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -950 250.0 1450" version="1.1">
+<polyline points="10,-10 60.0,-800 110.0,-900 200.0,-700 200.0,-10 10,-10" style="fill:white;stroke:red;stroke-width:4"></polyline>
+<text x="60.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Cataratas Victoria
+</text>
+<text x="110.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Parque Nacional de las Cataratas Victoria
+</text>
+<text x="200.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Catarata del Demonio
+</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -850 2860.0 1350" version="1.1">
+<polyline points="10,-10 210.0,-800 1310.0,-800 2810.0,-800 2810.0,-10 10,-10" style="fill:white;stroke:red;stroke-width:4"></polyline>
+<text x="210.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Jardin Botanico Nacional de Zimbabue
+</text>
+<text x="1310.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Shona Sculpture Gallery
+</text>
+<text x="2810.0" y="0" style="writing-mode: tb; glyph-orientation-vertical: 0;" font-size="2em">
+Mbizi Game Park
+</text>
+</svg></section>
 
+    <!-- NOTA: el inspector me da este warning "The map container element should be empty", pero necesito ponerle encabezados para el validador -->
     <section id="map" data-element="dinamico" class="mapboxgl-map">
       <h3>Mapa dinámico - Ubicación Actual</h3>
       <!-- mapa dinamico -->
-    <div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="1275" height="339" style="width: 1275px; height: 338.094px;"></canvas><div aria-label="Map marker" role="img" class="mapboxgl-marker mapboxgl-marker-anchor-center" style="transform: translate(637px, 169px) translate(-50%, -50%) translate(0px, -14px); opacity: 1; pointer-events: auto;"><svg display="block" height="41px" width="27px" viewBox="0 0 27 41"><defs><radialGradient id="shadowGradient"><stop offset="10%" stop-opacity="0.4"></stop><stop offset="100%" stop-opacity="0.05"></stop></radialGradient></defs><ellipse cx="13.5" cy="34.8" rx="10.5" ry="5.25" fill="url(#shadowGradient)"></ellipse><path fill="#3FB1CE" d="M27,13.5C27,19.07 20.25,27 14.75,34.5C14.02,35.5 12.98,35.5 12.25,34.5C6.75,27 0,19.22 0,13.5C0,6.04 6.04,0 13.5,0C20.96,0 27,6.04 27,13.5Z"></path><path opacity="0.25" d="M13.5,0C6.04,0 0,6.04 0,13.5C0,19.22 6.75,27 12.25,34.5C13,35.52 14.02,35.5 14.75,34.5C20.25,27 27,19.07 27,13.5C27,6.04 20.96,0 13.5,0ZM13.5,1C20.42,1 26,6.58 26,13.5C26,15.9 24.5,19.18 22.22,22.74C19.95,26.3 16.71,30.14 13.94,33.91C13.74,34.18 13.61,34.32 13.5,34.44C13.39,34.32 13.26,34.18 13.06,33.91C10.28,30.13 7.41,26.31 5.02,22.77C2.62,19.23 1,15.95 1,13.5C1,6.58 6.58,1 13.5,1Z"></path><circle fill="white" cx="13.5" cy="13.5" r="5.5"></circle></svg></div></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><button class="mapboxgl-ctrl-attrib-button" type="button" aria-label="Toggle attribution"><span class="mapboxgl-ctrl-icon" aria-hidden="true" title="Toggle attribution"></span></button><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=mapbox&amp;id=streets-v12&amp;access_token=pk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbGdzMnZweWowZWEyM2NvYWZkODMxZXpoIn0.ghWod73o3jm9F1lPOhfsjw#/-5.7813/43.2549/9" target="_blank" aria-label="Map feedback" rel="noopener nofollow">Improve this map</a></div></div></div></div></section>
+    <div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="1275" height="339" style="width: 1275px; height: 338.094px;"></canvas><div aria-label="Map marker" role="img" class="mapboxgl-marker mapboxgl-marker-anchor-center" style="transform: translate(637px, 169px) translate(-50%, -50%) translate(0px, -14px); opacity: 1; pointer-events: auto;"><svg display="block" height="41px" width="27px" viewBox="0 0 27 41"><defs><radialGradient id="shadowGradient"><stop offset="10%" stop-opacity="0.4"></stop><stop offset="100%" stop-opacity="0.05"></stop></radialGradient></defs><ellipse cx="13.5" cy="34.8" rx="10.5" ry="5.25" fill="url(#shadowGradient)"></ellipse><path fill="#3FB1CE" d="M27,13.5C27,19.07 20.25,27 14.75,34.5C14.02,35.5 12.98,35.5 12.25,34.5C6.75,27 0,19.22 0,13.5C0,6.04 6.04,0 13.5,0C20.96,0 27,6.04 27,13.5Z"></path><path opacity="0.25" d="M13.5,0C6.04,0 0,6.04 0,13.5C0,19.22 6.75,27 12.25,34.5C13,35.52 14.02,35.5 14.75,34.5C20.25,27 27,19.07 27,13.5C27,6.04 20.96,0 13.5,0ZM13.5,1C20.42,1 26,6.58 26,13.5C26,15.9 24.5,19.18 22.22,22.74C19.95,26.3 16.71,30.14 13.94,33.91C13.74,34.18 13.61,34.32 13.5,34.44C13.39,34.32 13.26,34.18 13.06,33.91C10.28,30.13 7.41,26.31 5.02,22.77C2.62,19.23 1,15.95 1,13.5C1,6.58 6.58,1 13.5,1Z"></path><circle fill="white" cx="13.5" cy="13.5" r="5.5"></circle></svg></div></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><button class="mapboxgl-ctrl-attrib-button" type="button" aria-label="Toggle attribution"><span class="mapboxgl-ctrl-icon" aria-hidden="true" title="Toggle attribution"></span></button><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=mapbox&amp;id=streets-v12&amp;access_token=pk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbGdzMnZweWowZWEyM2NvYWZkODMxZXpoIn0.ghWod73o3jm9F1lPOhfsjw#/-5.7812/43.2549/9" target="_blank" aria-label="Map feedback" rel="noopener nofollow">Improve this map</a></div></div></div></div></section>
 
-    <!-- aqui va el mapa estático -->
+    <!-- NOTA: el inspector me da este warning "The map container element should be empty", pero necesito ponerle encabezados para el validador -->
     
 
   <section data-element="estatico">
       <h3>Mapa Estatico - Ubicación Actual</h3>
       <!-- mapa estatico -->
-    <img src="https://api.mapbox.com/styles/v1/mapbox/light-v11/static/pin-s-l+000(-5.781327,43.254932)/-5.781327,43.254932,14/350x200?access_token=sk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbHE3c3U5bjkwdmdqMmtwN21qcDJqZzVxIn0.QgswFtaNfyAPAEsopDU1HQ" alt="mapa estático mapbox"></section></main>
+    <img src="https://api.mapbox.com/styles/v1/mapbox/light-v11/static/pin-s-l+000(-5.781168,43.25488)/-5.781168,43.25488,14/350x200?access_token=sk.eyJ1IjoiYWxpY2lhZnAxNSIsImEiOiJjbHE3c3U5bjkwdmdqMmtwN21qcDJqZzVxIn0.QgswFtaNfyAPAEsopDU1HQ" alt="mapa estático mapbox"></section></main>
 
   <script>
     //var v = new Viajes();
