@@ -13,6 +13,11 @@ section[data-element="dinamico"]{
     height: 35vh;
  }
 
+ /*especificidad (0,1,2) */
+section[data-element="estatico"] img{
+    max-width: 40vw;
+ }
+
 
 
 /*especificidad (0,1,1) */
@@ -46,5 +51,8 @@ article a {
     /* acorta los enlaces */
     word-wrap: break-word;
 }
+
+
+
 
 
