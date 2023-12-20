@@ -114,15 +114,6 @@ header>nav a{
 nav{
     text-align: center;
 }
-/* 
- enlace al pasar el ratón por encima
-especificidad (0,1,1)
-a:hover {
-   
-    color: #DE026D; /*background heredado de body*/
-    /*  
-}
-*/
 
 
 /*tercer elemento de la lista no ordenada*/
@@ -130,6 +121,13 @@ a:hover {
 ul li:nth-child(3)  {
     /*background heredado de body*/
     color: #DE026D;
+}
+
+/*especificidad (0,0,1) */
+video {
+    /* video adaptable */
+    max-width: 80%;
+    height: auto;
 }
 
   
