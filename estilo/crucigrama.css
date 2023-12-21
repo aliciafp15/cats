@@ -9,7 +9,7 @@ main>section {
     max-width: 95vw;
     gap: 0;
     width: 70vw;
-    min-height: 50vw;
+    min-height: 38vw; /*reducido por pruebas de usabilidad*/
     align-self: center;
 }
 
