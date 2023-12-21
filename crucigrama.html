@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
+<html lang="es"><head>
+  <!-- Datos que describen el documento -->
+  <meta charset="UTF-8">
   <title>Escritorio Virtual - Crucigrama</title>
-  <meta name="author" content="Alicia Fernández Pushkina" />
-  <meta name="description" content="Crucigrama hecho para la seccion de juegos" />
-  <meta name="keywords" content="juegos, crucigrama, javascript, jquery, html, css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-  <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-  <link rel="stylesheet" type="text/css" href="estilo/crucigrama.css" />
-  <link href="multimedia/imagenes/favicon.ico" rel="icon" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
+  <meta name="author" content="Alicia Fernández Pushkina">
+  <meta name="description" content="Crucigrama hecho para la seccion de juegos con php">
+  <meta name="keywords" content="juegos, crucigrama, javascript, jquery, html, css, php">
+  <!-- Definir la ventana gráfica -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+  <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+  <link rel="stylesheet" type="text/css" href="estilo/crucigrama.css">
+  <link href="multimedia/imagenes/favicon.ico" rel="icon">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!--jquery min-->
   <script src="js/crucigrama.js"></script>
 </head>
 
@@ -42,11 +40,15 @@
       <a href="sudoku.html" accesskey="d" tabindex="9">Sudoku</a>
       <a href="crucigrama.php" accesskey="c" tabindex="10">Crucigrama</a>
       <a href="api.html" accesskey="p" tabindex="11">Reproductor de música</a>
+      <a href="php/restaurante.php" accesskey="r" tabindex="12">Restaurante</a>
     </nav>
   </section>
 
   <main>
-    <h3>Crucigrama</h3>
+    <p>Pulsa una celda y resuelve la operación matemática</p>
+    <section><p data-fila="0" data-col="0" data-state="blocked">4</p><p data-fila="0" data-col="1" data-state="blocked">*</p><p data-fila="0" data-col="2"></p><p data-fila="0" data-col="3" data-state="blocked">=</p><p data-fila="0" data-col="4" data-state="blocked">12</p><p data-fila="0" data-col="5" data-state="empty"></p><p data-fila="0" data-col="6" data-state="empty"></p><p data-fila="0" data-col="7" data-state="empty"></p><p data-fila="0" data-col="8" data-state="blocked">5</p><p data-fila="1" data-col="0" data-state="empty"></p><p data-fila="1" data-col="1" data-state="empty"></p><p data-fila="1" data-col="2" data-state="blocked">*</p><p data-fila="1" data-col="3" data-state="empty"></p><p data-fila="1" data-col="4" data-state="blocked">/</p><p data-fila="1" data-col="5" data-state="empty"></p><p data-fila="1" data-col="6" data-state="empty"></p><p data-fila="1" data-col="7" data-state="empty"></p><p data-fila="1" data-col="8" data-state="blocked">*</p><p data-fila="2" data-col="0" data-state="blocked">4</p><p data-fila="2" data-col="1" data-state="blocked">-</p><p data-fila="2" data-col="2"></p><p data-fila="2" data-col="3" data-state="blocked">=</p><p data-fila="2" data-col="4"></p><p data-fila="2" data-col="5" data-state="empty"></p><p data-fila="2" data-col="6" data-state="blocked">15</p><p data-fila="2" data-col="7" data-state="empty"></p><p data-fila="2" data-col="8"></p><p data-fila="3" data-col="0" data-state="blocked">*</p><p data-fila="3" data-col="1" data-state="empty"></p><p data-fila="3" data-col="2" data-state="blocked">=</p><p data-fila="3" data-col="3" data-state="empty"></p><p data-fila="3" data-col="4" data-state="blocked">=</p><p data-fila="3" data-col="5" data-state="empty"></p><p data-fila="3" data-col="6" data-state="blocked">/</p><p data-fila="3" data-col="7" data-state="empty"></p><p data-fila="3" data-col="8" data-state="blocked">=</p><p data-fila="4" data-col="0"></p><p data-fila="4" data-col="1" data-state="empty"></p><p data-fila="4" data-col="2" data-state="blocked">3</p><p data-fila="4" data-col="3" data-state="empty"></p><p data-fila="4" data-col="4" data-state="blocked">4</p><p data-fila="4" data-col="5" data-state="blocked">*</p><p data-fila="4" data-col="6"></p><p data-fila="4" data-col="7" data-state="blocked">=</p><p data-fila="4" data-col="8" data-state="blocked">20</p><p data-fila="5" data-col="0" data-state="blocked">=</p><p data-fila="5" data-col="1" data-state="empty"></p><p data-fila="5" data-col="2" data-state="empty"></p><p data-fila="5" data-col="3" data-state="empty"></p><p data-fila="5" data-col="4" data-state="empty"></p><p data-fila="5" data-col="5" data-state="empty"></p><p data-fila="5" data-col="6" data-state="blocked">=</p><p data-fila="5" data-col="7" data-state="empty"></p><p data-fila="5" data-col="8" data-state="empty"></p><p data-fila="6" data-col="0" data-state="blocked">8</p><p data-fila="6" data-col="1" data-state="empty"></p><p data-fila="6" data-col="2" data-state="blocked">9</p><p data-fila="6" data-col="3" data-state="blocked">-</p><p data-fila="6" data-col="4"></p><p data-fila="6" data-col="5" data-state="blocked">=</p><p data-fila="6" data-col="6" data-state="blocked">3</p><p data-fila="6" data-col="7" data-state="empty"></p><p data-fila="6" data-col="8"></p><p data-fila="7" data-col="0" data-state="empty"></p><p data-fila="7" data-col="1" data-state="empty"></p><p data-fila="7" data-col="2" data-state="blocked">-</p><p data-fila="7" data-col="3" data-state="empty"></p><p data-fila="7" data-col="4" data-state="blocked">+</p><p data-fila="7" data-col="5" data-state="empty"></p><p data-fila="7" data-col="6" data-state="empty"></p><p data-fila="7" data-col="7" data-state="empty"></p><p data-fila="7" data-col="8" data-state="blocked">*</p><p data-fila="8" data-col="0" data-state="blocked">6</p><p data-fila="8" data-col="1" data-state="blocked">/</p><p data-fila="8" data-col="2"></p><p data-fila="8" data-col="3" data-state="blocked">=</p><p data-fila="8" data-col="4"></p><p data-fila="8" data-col="5" data-state="empty"></p><p data-fila="8" data-col="6" data-state="empty"></p><p data-fila="8" data-col="7" data-state="empty"></p><p data-fila="8" data-col="8"></p><p data-fila="9" data-col="0" data-state="empty"></p><p data-fila="9" data-col="1" data-state="empty"></p><p data-fila="9" data-col="2" data-state="blocked">=</p><p data-fila="9" data-col="3" data-state="empty"></p><p data-fila="9" data-col="4" data-state="blocked">=</p><p data-fila="9" data-col="5" data-state="empty"></p><p data-fila="9" data-col="6" data-state="empty"></p><p data-fila="9" data-col="7" data-state="empty"></p><p data-fila="9" data-col="8" data-state="blocked">=</p><p data-fila="10" data-col="0" data-state="empty"></p><p data-fila="10" data-col="1" data-state="empty"></p><p data-fila="10" data-col="2" data-state="blocked">6</p><p data-fila="10" data-col="3" data-state="empty"></p><p data-fila="10" data-col="4" data-state="blocked">8</p><p data-fila="10" data-col="5" data-state="blocked">*</p><p data-fila="10" data-col="6"></p><p data-fila="10" data-col="7" data-state="blocked">=</p><p data-fila="10" data-col="8" data-state="blocked">16</p></section>
+
+
   </main>
 
   <section data-type="botonera">
@@ -65,7 +67,8 @@
     <button onclick="crucigrama.introduceElement('-')">-</button>
     <button onclick="crucigrama.introduceElement('/')">/</button>
   </section>
-
+  <!-- codigo php para mostrar la clasificación -->
+    
   <script>
     var crucigrama = new Crucigrama()
     crucigrama.paintMathword();
@@ -86,9 +89,10 @@
       }
 
     });
-
   </script>
-</body>
 
 
-</html>
+
+</body></html>
+
+</ol></body></html>
