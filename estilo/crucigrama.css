@@ -1,8 +1,8 @@
 /*datos personales Alicia Fernández Pushkina y UO275727*/
 
 
-/*especificidad (0,0,1) */
-main {
+
+main>section {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     /* grid-template-rows: repeat(12, 1fr); */
@@ -12,6 +12,8 @@ main {
     min-height: 50vw;
     align-self: center;
 }
+
+
 
 /*especificidad (0,0,1) */
 h3 {
@@ -32,9 +34,14 @@ p[data-state="clicked"] {
     background-color: #DDD;
 }
 
-/*especificidad (0,0,1) */
-p {
-    /* padding: 1em; */
+/*especificidad (0,1,1) */
+p[data-state="blocked"] {
+    /*color hereado de body*/
+    background-color: #E8DBF9;
+}
+
+/*especificidad (0,0,2) */
+section p {
     margin: 0;
     text-align: center;
     border-style: solid;
@@ -69,7 +76,8 @@ form>label {
 
     /*especificidad (0,1,1) */
     section[data-type=botonera] {
-        display: flex;
+        /* Redefinición de display para hacer visible la botonera */
+        display: flex; 
         gap: 1em;
         justify-content: center;
         align-items: center;
@@ -93,7 +101,7 @@ form>label {
 
     /*especificidad (0,0,1) */
     main {
-        /* ajusto el tamaño en pantallas pequeñas*/
+        /* Redefinición de width y height: ajusto el tamaño en pantallas pequeñas*/
         width: 90vw;
         min-height: 90vw;
     }
